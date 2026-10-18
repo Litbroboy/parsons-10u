@@ -13,3 +13,5 @@ Live at https://litbroboy.github.io/parsons-10u/
 ## New tournament
 
 Update `data/config.json` with the new bracket id and its slot-to-game map, and update the `GAMES` list in `index.html`.
+
+In `index.html`, the `TOURNEYS` list drives the weekend-by-weekend season section. When a tournament ends, replace its `now:1` with its final `finish` (and `won:1` for a title) and a one-line `note`. Then add the next tournament with `now:1`, and point `NEXT` at the one after it.

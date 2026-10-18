@@ -304,6 +304,33 @@ table.stats td.hi{font-weight:700;color:var(--honey-deep)}
 .res .sc{font-family:var(--num);font-weight:700;font-variant-numeric:tabular-nums}
 .res .o{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .res .o small{color:var(--ink-2)}
+/* Season, weekend by weekend */
+.trn-sum{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px 20px}
+.trn-sum div{display:flex;flex-direction:column;gap:2px}
+.trn-sum .num{font-size:36px;line-height:1}
+.trn-sum span{font-size:13px;font-weight:600;color:var(--ink-2)}
+.trn-sum .ttl .num{color:var(--honey-deep)}
+.trns{display:flex;flex-direction:column;gap:10px}
+.trn{display:flex;flex-direction:column;gap:8px;padding:12px 14px;border:1px solid var(--rule);border-radius:12px;min-width:0}
+.trn.won{border:2px solid var(--honey)}
+.trn.now{border:2px dashed var(--honey)}
+.trn-top{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:start}
+.trn-top b{font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:23px;line-height:1.05}
+.trn-top .meta{font-size:13px;color:var(--ink-2)}
+.trn-top .num{font-size:30px;line-height:1;text-align:right}
+.trn-tags{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:14px}
+.finish{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--field)}
+.finish.won{background:var(--honey);color:var(--honey-ink)}
+.finish.now{background:transparent;border:1.5px solid var(--honey);color:var(--honey-deep)}
+.trn-tags .mvp b{color:var(--honey-deep)}
+.trn p{font-size:14px;max-width:70ch}
+.trn details summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink-2);padding:2px 0}
+.trn details .season{margin-top:6px;grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
+.next{display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:12px;border:1px solid var(--rule);background:var(--poster);color:var(--on-poster);text-decoration:none;font-size:14px}
+.next .nd{font-size:12px;font-weight:700;color:var(--honey)}
+.next b{font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:24px;line-height:1.05}
+.next .go{font-weight:700;margin-top:2px;color:var(--poster-2)}
+.next:hover .go{color:var(--on-poster)}
 .note{font-size:13px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:14px;display:flex;flex-direction:column;gap:6px}
 .note p{max-width:72ch}
 
@@ -422,7 +449,7 @@ h2{font-size:34px;line-height:1}
         <a class="tag" href="https://www.instagram.com/buzzeliteparsons10u/" target="_blank" rel="noopener">#buzzwin</a>
       </div>
     </div>
-    <nav class="jump" aria-label="Sections"><a href="#board">Game day</a><a href="#watch-h">Watch</a><a href="#road-h">Road</a><a href="#bk-h">Our bracket</a><a href="#sch-h">Our games</a><a href="#cards">Trading cards</a><a href="#games">Dugout games</a><a href="#team">Team stats</a><a href="#news">Team news</a><a href="#recap">Last time out</a><a href="#spotlight">Player spotlight</a><a href="#chat">Team chat</a></nav>
+    <nav class="jump" aria-label="Sections"><a href="#board">Game day</a><a href="#watch-h">Watch</a><a href="#road-h">Road</a><a href="#bk-h">Our bracket</a><a href="#sch-h">Our games</a><a href="#cards">Trading cards</a><a href="#games">Dugout games</a><a href="#team">Team stats</a><a href="#news">Team news</a><a href="#recap">Last time out</a><a href="#seasonsec">Season</a><a href="#spotlight">Player spotlight</a><a href="#chat">Team chat</a></nav>
   </header>
 
   <section>
@@ -578,9 +605,10 @@ h2{font-size:34px;line-height:1}
     <p class="small quiet">Tap a column heading to sort, or a player's row to open her spotlight. Season stats from GameChanger, current through Battle for the Bag.</p>
   </section>
 
-  <section aria-labelledby="season-h">
-    <div class="sec-head"><h2 id="season-h">Fall 2026</h2><p>19 wins, 4 losses. Scores from GameChanger and the brackets.</p></div>
-    <div class="season" id="season"></div>
+  <section aria-labelledby="season-h" id="seasonsec">
+    <div class="sec-head"><h2 id="season-h">Fall 2026, weekend by weekend</h2><p id="seasonsub">Scores from GameChanger and the brackets.</p></div>
+    <div class="trn-sum" id="seasonsum"></div>
+    <div class="trns" id="season"></div>
   </section>
 
   <section aria-labelledby="chat-h" id="chat">
@@ -881,8 +909,72 @@ function renderSpot(){
 }
 document.getElementById("spotchips").addEventListener("click",e=>{const b=e.target.closest("[data-spot]");if(!b)return;spotPick(b.dataset.spot||null)});
 document.getElementById("stattable").addEventListener("click",e=>{if(e.target.closest("th"))return;const tr=e.target.closest("tr[data-p]");if(!tr)return;spotPick(tr.dataset.p);document.getElementById("spotlight").scrollIntoView({behavior:calm()?"auto":"smooth",block:"start"})});
+/* Season by tournament. Games come from SEASON by date, so new bracket results land
+   in the right weekend automatically. "now:1" marks the tournament being played; its finish
+   is worked out from our bracket games. When a tournament is over, give it a fixed finish. */
+const TOURNEYS=[
+ {name:"Open Season",when:"Aug 29–30",days:["Aug 29","Aug 30"],div:"10U, six teams",finish:"Champions",won:1,
+  note:"Top seed out of pool play, then three bracket wins on Sunday. The last two came against Waco Wood Ducks, 2–1 and 1–0."},
+ {name:"Drop Tine Classic",when:"Sep 12–13",days:["Sep 12","Sep 13"],div:"10U, four teams",finish:"Champions",won:1,mvp:"Rayann O, #9",
+  post:"https://www.instagram.com/buzzeliteparsons10u/p/DdRvh8WkS7Y/",
+  note:"Undefeated again, and the field managed five runs all weekend."},
+ {name:"Locked & Loaded",when:"Sep 26–27",days:["Sep 26","Sep 27"],div:"10U, five teams",finish:"Champions",won:1,
+  note:"Three titles in three tries. Two shutouts, and only three runs allowed all weekend."},
+ {name:"Battle for the Bag",when:"Oct 10–11",days:["Oct 10","Oct 11"],div:"10U Gold, nine teams",finish:"Tied for 5th",
+  post:"https://www.instagram.com/buzzeliteparsons10u/p/DeW3JVwxhJ1/",
+  note:"Pink uniforms for Breast Cancer Awareness Month. Three losses by a combined five runs, two of them to the Texas Twisters."},
+ {name:"Doubles & Does",when:"Oct 17–18",days:["Oct 17","Oct 18"],div:"10U Silver, six teams",now:1,
+  note:null}
+];
+const NEXT={name:"Fright Night at the Ranch",when:"Oct 31–Nov 1",until:Date.parse("2026-11-02T00:00:00-06:00"),
+  url:"https://parsonssportsranch.leagueapps.com/app/tournaments/5012673",
+  text:"We're registered. Teams play in costume, and the best-dressed team in each division wins prizes. Four-game guarantee: two pool games, then a double-elimination bracket."};
+function curFinish(){
+  const v=OURDIV(); if(!ETTA)return null;
+  if(champion(v,{})===ETTA)return {finish:"Champions",won:1};
+  const losses=GAMES.filter(g=>g.v===v&&g.as!=null&&teams(g,{}).includes(ETTA)&&winner(g,{})&&winner(g,{})!==ETTA).sort((a,b)=>sortKey(a)-sortKey(b));
+  if(losses.length<2)return null;
+  const n=losses[losses.length-1].n;
+  return {finish:({3:"Tied for 5th",4:"Tied for 5th",7:"4th",9:"3rd",10:"Runner-up",11:"Runner-up"})[n]||"Finished"};
+}
+function liveNote(gs){
+  const N=["no","one","two","three","four","five","six","seven"], sc=x=>x[3].split("-").map(Number);
+  if(!gs.length)return "First pitch is coming.";
+  const rest=gs.slice(1), rf=rest.reduce((a,x)=>a+sc(x)[0],0), ra=rest.reduce((a,x)=>a+sc(x)[1],0);
+  if(gs[0][2]==="L"&&rest.length&&rest.every(x=>x[2]==="W"))
+    return `Lost the opener to ${gs[0][1]}, then won ${rest.length===1?"the next one":N[rest.length]+" straight"}, by a combined ${rf}–${ra}.`;
+  const tf=gs.reduce((a,x)=>a+sc(x)[0],0), ta=gs.reduce((a,x)=>a+sc(x)[1],0);
+  return `${gs.filter(x=>x[2]==="W").length}–${gs.filter(x=>x[2]==="L").length} this weekend, with ${tf} runs scored and ${ta} allowed.`;
+}
 function renderSeason(){
-  document.getElementById("season").innerHTML=SEASON.map(([d,o,r,s])=>`<div class="res ${r}"><span class="r">${r}</span><span class="sc">${s}</span><span class="o">${esc(o)} <small>${d}</small></span></div>`).join("");
+  const sc=x=>x[3].split("-").map(Number);
+  const W=SEASON.filter(x=>x[2]==="W").length, L=SEASON.length-W;
+  const rf=SEASON.reduce((a,x)=>a+sc(x)[0],0), ra=SEASON.reduce((a,x)=>a+sc(x)[1],0);
+  const rows=TOURNEYS.map(t=>{
+    let f=t.now?curFinish():{finish:t.finish,won:t.won};
+    const gs=SEASON.filter(x=>t.days.includes(x[0]));
+    return {...t,gs,f,w:gs.filter(x=>x[2]==="W").length,l:gs.filter(x=>x[2]==="L").length};
+  });
+  const titles=rows.filter(t=>t.f&&t.f.won).length;
+  document.getElementById("seasonsub").textContent=`${W}–${L} across ${TOURNEYS.length} tournaments. Scores from GameChanger and the brackets.`;
+  document.getElementById("seasonsum").innerHTML=
+    `<div class="ttl"><b class="num">${titles}</b><span>Titles</span></div>`+
+    `<div><b class="num">${W}–${L}</b><span>Record</span></div>`+
+    `<div><b class="num">${rf}–${ra}</b><span>Runs for and against</span></div>`+
+    `<div><b class="num">+${rf-ra}</b><span>Run differential</span></div>`;
+  const next=Date.now()<NEXT.until?`<a class="next" href="${NEXT.url}" target="_blank" rel="noopener"><span class="nd">Up next · ${NEXT.when}</span><b>${esc(NEXT.name)}</b><span>${esc(NEXT.text)}</span><span class="go">Tournament page and who's signed up →</span></a>`:"";
+  document.getElementById("season").innerHTML=next+rows.slice().reverse().map(t=>{
+    const live=t.now&&!t.f;
+    const fin=live?`<span class="finish now">Playing now</span>`:t.f?`<span class="finish ${t.f.won?"won":""}">${t.f.won?"🏆 ":""}${esc(t.f.finish)}</span>`:"";
+    const mvp=t.mvp?`<span class="mvp">Tournament MVP <b>${esc(t.mvp)}</b></span>`:"";
+    const post=t.post?`<a href="${t.post}" target="_blank" rel="noopener" class="small">Team post</a>`:"";
+    const games=t.gs.map(([d,o,r,s])=>`<div class="res ${r}"><span class="r">${r}</span><span class="sc">${s.replace("-","–")}</span><span class="o">${esc(o)} <small>${d}</small></span></div>`).join("");
+    return `<article class="trn ${t.f&&t.f.won?"won":live?"now":""}">
+      <div class="trn-top"><div><b>${esc(t.name)}</b><div class="meta">${t.when} · ${esc(t.div)}</div></div><span class="num">${t.w}–${t.l}</span></div>
+      <div class="trn-tags">${fin}${mvp}${post}</div>
+      <p>${esc(t.note||liveNote(t.gs))}</p>
+      <details${t.now?" open":""}><summary>${t.gs.length} game${t.gs.length===1?"":"s"}</summary><div class="season">${games}</div></details>
+    </article>`}).join("");
 }
 function gameAt(g){if(!g.t)return "";const m=g.t.match(/(\d+):(\d+) (AM|PM)/);const hh=(m[1]%12+(m[3]==="PM"?12:0));const day=g.d==="Sat"?"2026-10-17":"2026-10-18";return Date.parse(day+"T"+String(hh).padStart(2,"0")+":"+m[2]+":00-05:00")}
 function tickCount(){const el=document.getElementById("count");if(!el)return;const at=+el.dataset.at;if(!at){el.textContent="";return}const d=at-Date.now();
