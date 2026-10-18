@@ -1,0 +1,1065 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Parsons 10U</title>
+<meta name="description" content="Buzz Elite Parsons 10U softball: next game, live bracket, player spotlight, trading cards, dugout games and weekly awards. #buzzwin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Parsons 10U">
+<meta property="og:title" content="Parsons 10U">
+<meta property="og:description" content="Buzz Elite Parsons 10U game day: live bracket, stats, trading cards and games. #buzzwin">
+<meta property="og:url" content="https://litbroboy.github.io/parsons-10u/">
+<meta property="og:image" content="https://litbroboy.github.io/parsons-10u/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="BUZZ Parsons 10U. Softball, hustle, heart. #buzzwin">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Parsons 10U">
+<meta name="twitter:description" content="Buzz Elite Parsons 10U game day: live bracket, stats, trading cards and games.">
+<meta name="twitter:image" content="https://litbroboy.github.io/parsons-10u/og.png">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800;1,900&family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700&family=Permanent+Marker&display=swap">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<style>
+/* Layout: black game-day poster up top (masthead + next-game board) in the team's red/black/white,
+   then clean white scorebook sections below so it reads in the sun at the field. Left-aligned throughout. */
+:root{
+  --paper:#FFFFFF; --field:#F3F3F1; --ink:#141414; --ink-2:#55555C; --rule:#E3E3E0;
+  --honey:#E01A22; --honey-ink:#FFFFFF; --honey-deep:#C3131A; --honey-soft:#FDE8E9;
+  --stitch:#E01A22; --stitch-soft:#FDE8E9;
+  --win:#1C7A45; --win-soft:#E1F2E7; --loss:#B4232A;
+  --poster:#0A0A0A; --on-poster:#FFFFFF; --poster-2:#B9B9BE;
+  --jersey:"Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --body:"Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --num:"Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+  --marker:"Permanent Marker", "Comic Sans MS", cursive;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0E0E10; --field:#1A1A1D; --ink:#F4F4F5; --ink-2:#A6A6AE; --rule:#2B2B30;
+  --honey:#D9232B; --honey-ink:#FFFFFF; --honey-deep:#FF6A70; --honey-soft:#3A1416;
+  --stitch:#FF4D55; --stitch-soft:#3A1416;
+  --win:#5FD08E; --win-soft:#17342A; --loss:#FF7A80;
+  --poster:#000000; --on-poster:#FFFFFF; --poster-2:#B9B9BE; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0E0E10; --field:#1A1A1D; --ink:#F4F4F5; --ink-2:#A6A6AE; --rule:#2B2B30;
+  --honey:#D9232B; --honey-ink:#FFFFFF; --honey-deep:#FF6A70; --honey-soft:#3A1416;
+  --stitch:#FF4D55; --stitch-soft:#3A1416;
+  --win:#5FD08E; --win-soft:#17342A; --loss:#FF7A80;
+  --poster:#000000; --on-poster:#FFFFFF; --poster-2:#B9B9BE; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.45}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px;padding-block:18px 56px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--jersey);font-weight:400;margin:0;text-wrap:balance;letter-spacing:.02em}
+h2{font-size:26px;line-height:1.1}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+.num{font-family:var(--num);font-variant-numeric:tabular-nums;font-weight:700}
+.quiet{color:var(--ink-2)}
+.small{font-size:14px}
+section{display:flex;flex-direction:column;gap:14px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:8px}
+.sec-head p{font-size:14px;color:var(--ink-2)}
+button{font-family:inherit}
+
+/* Masthead */
+.mast{display:flex;flex-direction:column;gap:6px}
+.mast h1{font-size:clamp(56px,15vw,112px);line-height:.95;margin-left:-.04em}
+.mast-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:16px;font-weight:500}
+.bee{display:inline-flex;align-items:center;gap:7px;font-weight:700}
+.bee i{width:14px;height:14px;background:var(--honey);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);flex:none}
+.yt{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--ink-2)}
+.yt b{color:var(--stitch)}
+.jump{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:10px;font-size:14px;font-weight:600}
+.jump a{text-decoration:none;border-bottom:2px solid var(--honey);padding-bottom:1px}
+.chat-cta{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:var(--field);border-radius:12px;padding:16px}
+.chat-cta p{font-size:15px}
+@media (max-width:520px){.chat-cta{grid-template-columns:1fr}}
+
+/* Scoreboard panel */
+.board{background:var(--honey);color:var(--honey-ink);border-radius:18px;padding:22px 22px 20px;display:grid;grid-template-columns:1fr;gap:10px;position:relative;overflow:hidden}
+.board::after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:3px dashed color-mix(in srgb,var(--honey-ink) 18%,transparent);pointer-events:none}
+.board-k{font-size:15px;font-weight:600;display:flex;flex-wrap:wrap;gap:4px 14px}
+.board-time{font-family:var(--jersey);font-size:clamp(64px,19vw,120px);line-height:.9;letter-spacing:-.01em}
+.board-vs{font-size:22px;font-weight:600;line-height:1.25}
+.board-vs em{font-style:normal;font-weight:500;opacity:.8}
+.board-meta{font-size:15px;font-weight:500;display:flex;flex-wrap:wrap;gap:2px 16px}
+.board-warn{font-weight:700;color:var(--honey-ink);background:color-mix(in srgb,var(--paper) 55%,transparent);border-radius:8px;padding:6px 10px;width:max-content;max-width:100%;font-size:14px}
+.board-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;text-decoration:none;padding:11px 16px;border-radius:10px;background:var(--ink);color:var(--paper);border:0;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--honey-ink);border:2px solid color-mix(in srgb,var(--honey-ink) 50%,transparent)}
+.btn .dot{width:8px;height:8px;border-radius:50%;background:var(--stitch)}
+@media (prefers-reduced-motion:no-preference){.btn .dot{animation:pulse 1.4s ease-in-out infinite}}
+@keyframes pulse{50%{opacity:.2}}
+.board.done{background:var(--field);color:var(--ink)} .board.done::after{display:none}
+.board.done .board-time{font-size:clamp(34px,8vw,56px)}
+.tour{font-size:15px;color:var(--ink-2)}
+.tour b{color:var(--ink)}
+
+/* Fields */
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.fld{border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--paper);min-width:0}
+.fld-h{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 12px;background:var(--ink);color:var(--paper)}
+.fld-h b{font-family:var(--jersey);font-weight:400;font-size:16px}
+.fld-h a{font-size:12px;font-weight:700;text-decoration:none;color:var(--honey-ink);background:var(--honey);padding:3px 9px;border-radius:6px}
+.fld-h .div{font-size:12px;opacity:.8}
+.fg{display:grid;grid-template-columns:64px 1fr;gap:2px 10px;padding:8px 12px;border-bottom:1px solid var(--rule);align-items:start}
+.fg:last-child{border-bottom:0}
+.fg .ft{font-family:var(--num);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+.fg .ft small{display:block;font-family:var(--body);font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
+.fg .fm{min-width:0;font-size:14px}
+.fg .fm .l{display:flex;justify-content:space-between;gap:8px}
+.fg .fm .l .s{font-family:var(--num);font-weight:700;font-variant-numeric:tabular-nums}
+.fg .fm .l.lose{color:var(--ink-2)}
+.fg .fm .g{font-size:12px;color:var(--ink-2)}
+.fg.now{background:color-mix(in srgb,var(--honey) 16%,var(--paper))}
+.fg.now .ft small{color:var(--stitch)}
+.fg.done{opacity:.6}
+.fg.us .fm{font-weight:600}
+.fg.us .fm .l:not(.lose)::before{content:"";display:inline-block;width:8px;height:8px;background:var(--honey);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);margin-right:6px}
+
+/* Seed picker */
+.seedpick{display:flex;flex-direction:column;gap:8px;background:var(--field);border-radius:12px;padding:14px 16px}
+.sp-h{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.sp-row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sp-l{font-weight:700;font-size:13px;width:48px}
+.sp-row button{font:600 14px var(--body);color:var(--ink);background:var(--paper);border:2px solid var(--rule);border-radius:999px;padding:5px 11px;cursor:pointer}
+.sp-row button[aria-pressed="true"]{background:var(--honey);border-color:var(--honey);color:var(--honey-ink)}
+.fd{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);padding:8px 12px 2px;background:var(--field)}
+/* Recap + awards */
+.recap{display:flex;flex-direction:column;gap:14px}
+.recap-line{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;font-size:16px}
+.recap-line .big{font-family:var(--jersey);font-size:52px;line-height:1;color:var(--honey-deep)}
+.recap-games{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 14px}
+.rg{display:grid;grid-template-columns:18px 44px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.rg .r{font-family:var(--jersey)} .rg.W .r{color:var(--win)} .rg.L .r{color:var(--loss)}
+.rg .sc{font-family:var(--num);font-weight:700;font-variant-numeric:tabular-nums}
+.rg small{color:var(--ink-2);display:block}
+.recap p{max-width:70ch;font-size:15px}
+.awards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.aw{display:flex;flex-direction:column;gap:3px;padding:12px 14px;border-radius:12px;background:var(--field);font-size:14px;min-width:0}
+.aw b{font-family:var(--jersey);font-weight:400;font-size:18px;color:var(--honey-deep)}
+.aw .who{font-weight:700;font-size:15px}
+.aw.team{grid-column:1/-1;background:var(--honey);color:var(--honey-ink)} .aw.team b{color:var(--honey-ink)}
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.nw{display:flex;flex-direction:column;gap:4px;padding:14px;border-radius:12px;border:1px solid var(--rule);text-decoration:none;color:var(--ink);font-size:14px;min-width:0}
+.nw:hover{border-color:var(--honey)}
+.nw .nd{font-size:12px;font-weight:700;color:var(--ink-2)}
+.nw b{font-family:var(--jersey);font-weight:400;font-size:18px}
+.weekly{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border-radius:12px;border:2px dashed var(--honey);font-size:14px}
+.weekly b{font-family:var(--jersey);font-weight:400;font-size:18px}
+/* Cameras */
+.cams{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cam{display:flex;flex-direction:column;gap:4px;text-decoration:none;padding:16px;border-radius:12px;background:var(--ink);color:var(--paper);min-width:0}
+.cam b{font-family:var(--jersey);font-size:20px;font-weight:400;display:flex;align-items:center;gap:8px}
+.cam b::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--stitch);flex:none}
+@media (prefers-reduced-motion:no-preference){.cam b::before{animation:pulse 1.4s ease-in-out infinite}}
+.cam span{font-size:14px;opacity:.8}
+@media (max-width:460px){.cams{grid-template-columns:1fr}}
+
+/* Road */
+.road{display:flex;flex-direction:column}
+.step{display:grid;grid-template-columns:88px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.step:last-child{border-bottom:0}
+.step-time{font-family:var(--num);font-weight:700;font-size:20px;line-height:1.1;font-variant-numeric:tabular-nums}
+.step-time small{display:block;font-family:var(--body);font-weight:500;font-size:12px;color:var(--ink-2);margin-top:2px}
+.step-body{min-width:0;display:flex;flex-direction:column;gap:6px}
+.step-title{font-weight:600;font-size:17px}
+.step-title .quiet{font-weight:500}
+.forks{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.fork::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:7px;vertical-align:0}
+.fork.w::before{background:var(--win)} .fork.l::before{background:var(--loss)}
+.step.champ .step-time{color:var(--honey-deep)}
+.step.champ .step-title{font-family:var(--jersey);font-size:24px;font-weight:400}
+
+/* Brackets */
+.tabs{display:flex;gap:6px}
+.tabs button{font:600 15px var(--body);color:var(--ink);background:transparent;border:2px solid var(--rule);border-radius:999px;padding:7px 14px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tabs button small{font-weight:500;opacity:.75;margin-left:6px}
+.bk-tools{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-2)}
+.ghost-btn{font:600 14px var(--body);color:var(--ink);background:transparent;border:2px solid var(--rule);border-radius:999px;padding:6px 12px;cursor:pointer}
+.champ-banner{font-weight:600;color:var(--ink)}
+.bk-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--field);border-radius:14px;padding:16px 14px 10px}
+.bk-half{display:flex;flex-direction:column;gap:10px}
+.bk-half + .bk-half{margin-top:18px;padding-top:16px;border-top:1px solid var(--rule)}
+.bk-half h3{font-size:16px}
+.bk-row{display:flex;gap:12px;width:max-content;align-items:flex-start}
+.bk-col{width:188px;display:flex;flex-direction:column;gap:8px}
+.bk-col h4{font-family:var(--body);font-size:13px;font-weight:600;color:var(--ink-2);margin:0 0 2px}
+@media (min-width:720px){.bk-row{align-items:stretch}.bk-col{position:relative;padding-top:24px;justify-content:space-around}.bk-col h4{position:absolute;top:0;left:0;margin:0}}
+.m{background:var(--paper);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.m.mine{border-color:var(--honey);box-shadow:0 0 0 2px var(--honey)}
+.m-h{display:flex;flex-direction:column;gap:0;font-size:12px;color:var(--ink-2);padding:5px 9px 3px;font-variant-numeric:tabular-nums;line-height:1.3}
+.m-h b{color:var(--ink);font-weight:700;white-space:nowrap}
+.m-h b span{color:var(--ink-2);font-weight:500;margin-left:6px}
+.tm{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;font:500 14px var(--body);color:var(--ink);background:transparent;border:0;padding:6px 9px;text-align:left}
+.tm + .tm{border-top:1px solid var(--rule)}
+.tm[data-pick]{cursor:pointer}
+.tm[data-pick]:hover{background:color-mix(in srgb,var(--honey) 22%,transparent)}
+.tm .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.tm .ph{color:var(--ink-2);font-style:italic}
+.tm .sc{font-family:var(--num);font-weight:700;font-size:16px;font-variant-numeric:tabular-nums}
+.tm.won{font-weight:700}
+.tm.lost{color:var(--ink-2)}
+.tm.picked{background:var(--honey);color:var(--honey-ink);font-weight:700}
+.tm.picked-out{color:var(--ink-2);text-decoration:line-through}
+.tm.etta .nm::before{content:"";display:inline-block;width:9px;height:9px;background:var(--honey);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);margin-right:6px;vertical-align:0}
+.wl{display:flex;gap:6px;padding:6px 9px 8px;border-top:1px solid var(--rule)}
+.wl a{font-size:12px;font-weight:700;text-decoration:none;padding:4px 9px;border-radius:6px;background:var(--ink);color:var(--paper)}
+.wl a + a{background:var(--honey);color:var(--honey-ink)}
+
+/* Schedule ledger */
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:600 14px var(--body);background:transparent;color:var(--ink);border:2px solid var(--rule);border-radius:999px;padding:6px 12px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ledger{display:flex;flex-direction:column}
+.day-h{font-family:var(--jersey);font-size:18px;padding:22px 0 6px;border-bottom:2px solid var(--ink);margin-bottom:2px}
+.day-h:first-child{padding-top:4px}
+.row{display:grid;grid-template-columns:72px 1fr auto;gap:4px 12px;align-items:start;padding:10px 0 10px 10px;border-bottom:1px solid var(--rule);border-left:4px solid transparent;margin-left:-14px;padding-left:10px}
+.row.mine{border-left-color:var(--honey);background:color-mix(in srgb,var(--honey) 10%,transparent)}
+.row-time{font-family:var(--num);font-weight:700;font-size:17px;padding-top:1px;font-variant-numeric:tabular-nums}
+.row-teams{min-width:0;display:flex;flex-direction:column;gap:2px}
+.row-teams .t{display:flex;justify-content:space-between;gap:10px;font-weight:500}
+.row-teams .t.win{font-weight:700} .row-teams .t.lose{color:var(--ink-2)}
+.row-teams .t .s{font-family:var(--num);font-weight:700;font-variant-numeric:tabular-nums}
+.row-meta{display:flex;flex-direction:column;align-items:flex-end;text-align:right;gap:2px;font-size:13px;color:var(--ink-2);min-width:96px}
+.chip{display:inline-block;font-size:12px;font-weight:700;padding:1px 7px;border-radius:5px;border:1.5px solid var(--rule)}
+.chip.gold{border-color:var(--honey);background:var(--honey);color:var(--honey-ink)}
+.chip.elim{border-color:var(--stitch);color:var(--stitch)}
+.row-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-size:13px}
+.row-foot .warn{color:var(--stitch);font-weight:600}
+.row-foot .wl{padding:0;border:0}
+@media (max-width:460px){.row{grid-template-columns:60px 1fr}.row-meta{grid-column:2;align-items:flex-start;text-align:left;flex-direction:row;flex-wrap:wrap;gap:4px 10px}}
+
+/* Ranch */
+.ranch{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 32px}
+.ranch > div{display:flex;flex-direction:column;gap:10px;min-width:0}
+.ranch ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-size:15px}
+.ranch dl{display:grid;grid-template-columns:1fr auto;gap:5px 16px;margin:0;font-size:15px}
+.ranch dd{margin:0;font-family:var(--num);font-weight:700}
+.ranch dt{border-bottom:1px dotted var(--rule)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{font-weight:600;font-size:14px;text-decoration:none;padding:7px 12px;border-radius:999px;border:2px solid var(--rule)}
+@media (max-width:640px){.ranch{grid-template-columns:1fr}}
+
+/* Etta spotlight */
+.spot{display:flex;flex-direction:column;gap:16px}
+.spot-group{display:flex;flex-direction:column;gap:6px}
+.spot-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:8px}
+.tile{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;background:var(--field);min-width:0}
+.tile b{font-family:var(--num);font-weight:700;font-size:30px;line-height:1;font-variant-numeric:tabular-nums}
+.tile span{font-size:12.5px;color:var(--ink-2);line-height:1.2}
+.tile.lead{background:var(--honey);color:var(--honey-ink)} .tile.lead span{color:var(--honey-ink)}
+
+/* Team stats */
+.leaders{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px 14px}
+.leader{display:grid;grid-template-columns:1fr auto;gap:0 8px;padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.leader .k{grid-column:1/-1;font-size:12px;color:var(--ink-2)}
+.leader .n{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.leader .v{font-family:var(--num);font-weight:700;font-size:18px;font-variant-numeric:tabular-nums}
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--rule);border-radius:10px}
+table.stats{border-collapse:collapse;width:max-content;min-width:100%;font-size:14px}
+table.stats th,table.stats td{padding:7px 10px;text-align:right;white-space:nowrap;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+table.stats th{font-weight:600;color:var(--ink-2);cursor:pointer;user-select:none;position:sticky;top:0;background:var(--paper);font-size:12.5px}
+table.stats th[aria-sort]{color:var(--ink)}
+table.stats th[aria-sort="descending"]::after{content:" ↓"} table.stats th[aria-sort="ascending"]::after{content:" ↑"}
+table.stats th:first-child,table.stats td:first-child{text-align:left;position:sticky;left:0;background:var(--paper);z-index:1;font-weight:600}
+table.stats td:first-child small{color:var(--ink-2);font-weight:500;margin-left:4px}
+table.stats tbody tr[data-p]{cursor:pointer}
+table.stats tbody tr[data-p]:hover td{background:var(--field)}
+table.stats tr.sel td{background:var(--honey-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{font:600 14px var(--body);color:var(--ink);background:var(--paper);border:2px solid var(--rule);border-radius:999px;padding:6px 12px;cursor:pointer}
+.chips button small{color:var(--ink-2);font-weight:600;margin-right:4px}
+.chips button[aria-pressed="true"]{background:var(--poster);color:var(--on-poster);border-color:var(--poster)}
+.chips button[aria-pressed="true"] small{color:var(--honey)}
+.spot-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.spot-head h3{font-size:30px;line-height:1}
+.spot-head .aw-tag{background:var(--honey);color:var(--honey-ink);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding:3px 9px;border-radius:5px}
+.key{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:4px 16px;margin:0;font-size:13px}
+.key div{display:flex;gap:8px;padding:3px 0;border-bottom:1px dotted var(--rule)}
+.key dt{font-weight:700;min-width:42px;font-family:var(--num)}
+.key dd{margin:0;color:var(--ink-2)}
+table.stats tr.team td{font-weight:700;border-top:2px solid var(--ink);background:var(--field)}
+table.stats td.hi{font-weight:700;color:var(--honey-deep)}
+
+/* Season log */
+.season{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 14px}
+.res{display:grid;grid-template-columns:18px 48px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px solid var(--rule);font-size:14px}
+.res .r{font-family:var(--jersey);font-size:15px}
+.res.W .r{color:var(--win)} .res.L .r{color:var(--loss)}
+.res .sc{font-family:var(--num);font-weight:700;font-variant-numeric:tabular-nums}
+.res .o{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.res .o small{color:var(--ink-2)}
+.note{font-size:13px;color:var(--ink-2);border-top:1px solid var(--rule);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.note p{max-width:72ch}
+
+/* ===== Buzz brand layer ===== */
+h1,h2,h3,.board-time,.cam b,.fld-h b,.day-h,.aw b,.nw b,.weekly b,.recap-line .big,.res .r,.rg .r,.step.champ .step-title{font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:.005em}
+h2{font-size:34px;line-height:1}
+.sec-head{border-bottom:3px solid var(--ink)}
+.mast{gap:12px}
+.mast-card{position:relative;overflow:hidden;background:var(--poster);color:var(--on-poster);border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:8px}
+.mast-stripes{position:absolute;right:-30px;top:0;bottom:0;width:46%;background:repeating-linear-gradient(-62deg,var(--honey) 0 16px,transparent 16px 34px);opacity:.9;-webkit-mask-image:linear-gradient(90deg,transparent,#000 70%);mask-image:linear-gradient(90deg,transparent,#000 70%);pointer-events:none}
+.mast h1{position:relative;font-size:clamp(64px,18vw,128px);line-height:.82;margin:0;display:flex;flex-direction:column}
+.mast h1 .mb{color:var(--honey);-webkit-text-stroke:2px var(--on-poster);paint-order:stroke fill;letter-spacing:.01em}
+.mast h1 .mw{font-size:.42em;line-height:1;color:var(--on-poster);margin-top:6px}
+.mast-tag{position:relative;font-family:var(--jersey);font-weight:800;font-style:italic;text-transform:uppercase;font-size:20px;letter-spacing:.04em;color:var(--poster-2)}
+.mast-tag i{color:var(--honey);font-style:italic;margin:0 4px}
+.mast-line{position:relative;color:var(--poster-2);font-size:14px}
+.mast-line .rec{color:var(--on-poster);font-weight:700}
+.mast-line .rec .num{font-size:18px}
+.tag{font-family:var(--marker);color:var(--on-poster);text-decoration:none;font-size:17px;transform:rotate(-3deg);display:inline-block;background:var(--honey);padding:2px 10px;border-radius:4px}
+.jump a{border-bottom-color:var(--honey)}
+.board{background:var(--poster);color:var(--on-poster);border:1px solid var(--rule)}
+.board::after{border-color:color-mix(in srgb,var(--honey) 55%,transparent)}
+.board-k{color:var(--poster-2)}
+.board-time{color:var(--on-poster);font-size:clamp(72px,21vw,132px);line-height:.85}
+.board-vs{color:var(--on-poster)}
+.board-vs em{color:var(--poster-2)}
+.board-meta{color:var(--poster-2)}
+.board-warn{background:var(--honey);color:var(--honey-ink)}
+.board .btn{background:var(--honey);color:var(--honey-ink)}
+.board .btn .dot{background:var(--on-poster)}
+.board .btn.ghost{background:transparent;color:var(--on-poster);border:2px solid color-mix(in srgb,var(--on-poster) 45%,transparent)}
+.board.done{background:var(--poster);color:var(--on-poster)}
+.board-count{font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:22px;color:var(--honey);letter-spacing:.02em}
+.board-count:empty{display:none}
+.last{display:inline-flex;align-items:center;gap:8px;width:max-content;max-width:100%;font-weight:700;font-size:14px;background:color-mix(in srgb,var(--on-poster) 12%,transparent);border-radius:999px;padding:4px 12px}
+.last b{font-family:var(--jersey);font-weight:900;font-style:italic;font-size:17px}
+.last.W b{color:#5FD08E} .last.L b{color:#FF7A80}
+.btn.hype{background:var(--on-poster)!important;color:var(--poster)!important;font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:18px;letter-spacing:.02em}
+.btn.hype:active{transform:scale(.96)}
+/* Trading cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.tc{appearance:none;border:0;padding:0;background:none;cursor:pointer;perspective:900px;aspect-ratio:5/7;width:100%;max-width:100%;font:inherit;color:inherit;text-align:left}
+.tc-in{position:relative;display:block;width:100%;height:100%;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tc[aria-pressed="true"] .tc-in{transform:rotateY(180deg)}
+.tc-f,.tc-b{position:absolute;inset:0;border-radius:14px;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column}
+.tc-f{background:var(--poster);color:var(--on-poster);border:3px solid var(--honey)}
+.tc-f::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-62deg,color-mix(in srgb,var(--honey) 55%,transparent) 0 8px,transparent 8px 22px);-webkit-mask-image:linear-gradient(180deg,#000,transparent 55%);mask-image:linear-gradient(180deg,#000,transparent 55%)}
+.tc-top{position:relative;display:flex;justify-content:space-between;align-items:center;padding:8px 10px 0;font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:15px}
+.tc-top .bz{color:var(--honey);-webkit-text-stroke:1px var(--on-poster);paint-order:stroke fill;font-size:20px}
+.tc-num{position:relative;flex:1;display:grid;place-items:center;font-family:var(--jersey);font-weight:900;font-style:italic;font-size:clamp(64px,22vw,96px);line-height:1;color:transparent;-webkit-text-stroke:2px var(--on-poster)}
+.tc-name{position:relative;background:var(--on-poster);color:var(--poster);font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:22px;padding:4px 10px 2px;line-height:1}
+.tc-aw{position:relative;background:var(--honey);color:var(--honey-ink);font-weight:700;font-size:12px;padding:4px 10px;text-transform:uppercase;letter-spacing:.04em}
+.tc-b{transform:rotateY(180deg);background:var(--paper);color:var(--ink);border:3px solid var(--poster);padding:10px;gap:6px}
+.tc-b h4{margin:0;font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:20px;line-height:1}
+.tc-b .who{font-size:12px;color:var(--ink-2)}
+.tc-stats{display:grid;grid-template-columns:1fr 1fr;gap:4px 8px;margin-top:2px}
+.tc-stats div{display:flex;flex-direction:column}
+.tc-stats b{font-family:var(--num);font-weight:700;font-size:20px;font-variant-numeric:tabular-nums;line-height:1.05}
+.tc-stats span{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-2)}
+.tc-b .blurb{font-size:12px;color:var(--ink-2);margin-top:auto;line-height:1.3}
+@media (prefers-reduced-motion:reduce){.tc-in{transition:none}}
+/* Dugout games */
+.gpanel{display:flex;flex-direction:column;gap:12px;border:1px solid var(--rule);border-radius:14px;padding:14px}
+.gbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.gstat{font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:20px}
+.gctl{display:flex;gap:6px;flex-wrap:wrap}
+.gctl .ghost-btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:520px}
+.mc{position:relative;aspect-ratio:3/4;border:0;padding:0;border-radius:10px;cursor:pointer;background:none;perspective:700px;font:inherit}
+.mc-back,.mc-face{position:absolute;inset:0;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .35s ease}
+.mc-back{background:var(--poster);color:var(--honey);font-family:var(--jersey);font-weight:900;font-style:italic;font-size:clamp(28px,9vw,44px);border:2px solid var(--honey);background-image:repeating-linear-gradient(-62deg,color-mix(in srgb,var(--honey) 35%,transparent) 0 5px,transparent 5px 14px)}
+.mc-face{background:var(--paper);color:var(--ink);border:2px solid var(--poster);transform:rotateY(180deg);padding:4px;text-align:center}
+.mc.up .mc-back{transform:rotateY(-180deg)} .mc.up .mc-face{transform:rotateY(0)}
+.mc.done .mc-face{background:var(--honey);color:var(--honey-ink);border-color:var(--honey)}
+.mf-num{font-family:var(--jersey);font-weight:900;font-style:italic;font-size:clamp(26px,8vw,40px);line-height:1}
+.mf-name{font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(14px,4vw,19px);line-height:1}
+.mf-name.sm{font-size:clamp(11px,3.2vw,15px)}
+.mf-sub{font-size:10px;font-weight:700;text-transform:uppercase;opacity:.7}
+.ttt{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:min(100%,330px);background:var(--poster);padding:6px;border-radius:14px}
+.tc3{aspect-ratio:1;border:0;border-radius:8px;background:var(--paper);display:grid;place-items:center;cursor:pointer;padding:10%}
+.tc3:disabled{cursor:default}
+.tc3.win{background:var(--honey-soft)}
+.tc3 svg{width:100%;height:100%}
+.quiz{display:flex;flex-direction:column;gap:10px}
+.quiz .q{font-size:20px;font-weight:700;line-height:1.25}
+.quiz .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.quiz .opts button{font:700 16px var(--body);text-align:left;padding:12px;border-radius:10px;border:2px solid var(--rule);background:var(--paper);color:var(--ink);cursor:pointer}
+.quiz .opts button.right{background:var(--win-soft);border-color:var(--win);color:var(--ink)}
+.quiz .opts button.wrong{background:var(--stitch-soft);border-color:var(--stitch);color:var(--ink)}
+.quiz .fb{font-weight:600}
+@media (max-width:420px){.quiz .opts{grid-template-columns:1fr}}
+.cage{position:relative;height:150px;border-radius:14px;overflow:hidden;background:var(--poster);cursor:pointer;touch-action:manipulation}
+.cage::before{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;background:#2F7D3A}
+.mound{position:absolute;left:4%;bottom:26px;width:13%;height:16px;border-radius:50% 50% 0 0;background:#B5713A}
+.zone{position:absolute;left:84%;width:8%;top:28px;bottom:34px;border:2px dashed var(--on-poster);border-radius:6px;opacity:.75}
+.ball{position:absolute;left:8%;top:62px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:#E9F25A;box-shadow:inset -3px -3px 0 rgba(0,0,0,.18);opacity:0}
+.cage-msg{position:absolute;left:12px;right:12px;top:8px;color:var(--on-poster);font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:22px;line-height:1.05;pointer-events:none}
+.cage-msg.small{font-family:var(--body);font-style:normal;text-transform:none;font-weight:600;font-size:14px;color:var(--poster-2)}
+.btn.swing{align-self:flex-start;background:var(--honey);color:var(--honey-ink);font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:24px;padding:12px 28px}
+/* Toast + confetti */
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--poster);color:var(--on-poster);border:2px solid var(--honey);border-radius:999px;padding:10px 18px;font-family:var(--jersey);font-weight:900;font-style:italic;text-transform:uppercase;font-size:22px;transition:opacity .2s,transform .2s;z-index:50;white-space:nowrap}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:40}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="mast-card">
+      <div class="mast-stripes" aria-hidden="true"></div>
+      <h1><span class="mb">Buzz</span><span class="mw">Parsons 10U</span></h1>
+      <p class="mast-tag">Softball <i>/</i> Hustle <i>/</i> Heart</p>
+      <div class="mast-line">
+        <span class="rec"><span class="num">19–4</span> this fall</span>
+        <span>Centex Buzz Fastpitch</span>
+        <span>Home field: Parsons Sports Ranch</span>
+        <a class="tag" href="https://www.instagram.com/buzzeliteparsons10u/" target="_blank" rel="noopener">#buzzwin</a>
+      </div>
+    </div>
+    <nav class="jump" aria-label="Sections"><a href="#board">Game day</a><a href="#watch-h">Watch</a><a href="#road-h">Road</a><a href="#bk-h">Our bracket</a><a href="#sch-h">Our games</a><a href="#cards">Trading cards</a><a href="#games">Dugout games</a><a href="#team">Team stats</a><a href="#news">Team news</a><a href="#recap">Last time out</a><a href="#spotlight">Player spotlight</a><a href="#chat">Team chat</a></nav>
+  </header>
+
+  <section>
+    <div class="board" id="board" aria-live="polite"></div>
+    <p class="tour"><b>Doubles &amp; Does</b> at Parsons Sports Ranch, Oct 17–18. Pool play Saturday went 1–1 (lost 7–1 to Texas Belles, came back from 2–0 down to beat Texas Trailblazers 7–6), which seeded us <b>#3 in 10U Silver</b>, where the bracket calls us <b>Buzz Elite</b>. Since then: 13–0 over Waco Warriors and 8–0 over Magic FP. Two wins from the title.</p>
+    <div class="seedpick" id="seedpick" hidden></div>
+  </section>
+
+  <section aria-labelledby="watch-h">
+    <div class="sec-head"><h2 id="watch-h">Watch live</h2><p>On Parsons Sports Network. Needs a free account.</p></div>
+    <div class="cams">
+      <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=sueParsonsField" target="_blank" rel="noopener"><b>Sue Parsons Field</b><span>Where we play the rest of today</span></a>
+      <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=parkersField" target="_blank" rel="noopener"><b>Parker's Field</b><span>Live when the ranch is broadcasting</span></a>
+      <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=remisField" target="_blank" rel="noopener"><b>Remi's Field</b><span>Live when the ranch is broadcasting</span></a>
+      <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=parsonsField" target="_blank" rel="noopener"><b>Parsons Field</b><span>Live when the ranch is broadcasting</span></a>
+    </div>
+    <p class="small quiet">Our games are also streamed inside GameChanger when a coach is filming; the Live score button opens it.</p>
+    <p class="small quiet">To watch two fields at once: open one, tap the picture-in-picture button on the player (bottom right), then open the other. The first keeps playing in a floating window.</p>
+  </section>
+
+  <section aria-labelledby="road-h">
+    <div class="sec-head"><h2 id="road-h">Our road to the title</h2><p>Win and move to the next line. Lose and that's the finish.</p></div>
+    <div class="road" id="road"></div>
+  </section>
+
+  <section aria-labelledby="bk-h">
+    <div class="sec-head"><h2 id="bk-h">Our bracket</h2>
+      <div class="tabs" id="divtabs">
+        <button type="button" data-v="S" aria-pressed="true">10U Silver<small>6 teams, double elimination</small></button>
+      </div>
+    </div>
+    <div class="bk-tools"><span>Tap a team in an unplayed game to pick a winner and see where it leads. Scroll sideways for later rounds.</span><button type="button" class="ghost-btn" id="reset">Clear picks</button></div>
+    <div class="champ-banner" id="champ" hidden></div>
+    <div class="bk-wrap" id="bracket"></div>
+  </section>
+
+  <section aria-labelledby="sch-h">
+    <div class="sec-head"><h2 id="sch-h">Our games</h2><p>Every game we've played or could still play this weekend.</p>
+      <div class="filters" id="filters" hidden></div>
+    </div>
+    <div class="ledger" id="timeline"></div>
+  </section>
+
+  <section aria-labelledby="cards-h" id="cards">
+    <div class="sec-head"><h2 id="cards-h">Trading cards</h2><p>Collect the whole roster. Tap a card to flip it.</p></div>
+    <div class="cards" id="cardgrid"></div>
+  </section>
+
+  <section aria-labelledby="games-h" id="games">
+    <div class="sec-head"><h2 id="games-h">Dugout games</h2><p>For the bleachers between games. Best scores save on your phone.</p></div>
+    <div class="tabs" id="gametabs">
+      <button type="button" data-g="memory" aria-pressed="true">Card match</button>
+      <button type="button" data-g="ttt" aria-pressed="false">Tic-tac-toe</button>
+      <button type="button" data-g="quiz" aria-pressed="false">Who's who?</button>
+      <button type="button" data-g="cage" aria-pressed="false">Batting cage</button>
+    </div>
+
+    <div class="gpanel" data-g="memory">
+      <div class="gbar"><span id="memstat" class="gstat"></span><span class="gctl"><button type="button" class="ghost-btn" id="memhard" aria-pressed="false">Number to name</button><button type="button" class="ghost-btn" id="memnew">New game</button></span></div>
+      <div class="mem" id="memgrid"></div>
+      <p class="small quiet">Flip two cards at a time and find each player's pair. "Number to name" makes it harder: match each jersey number to the right girl.</p>
+    </div>
+
+    <div class="gpanel" data-g="ttt" hidden>
+      <div class="gbar"><span id="tttstat" class="gstat"></span><span class="gctl"><button type="button" class="ghost-btn" id="tttmode" aria-pressed="true">vs Computer</button><button type="button" class="ghost-btn" id="tttnew">New game</button></span></div>
+      <div class="ttt" id="tttgrid"></div>
+      <p class="small quiet" id="tttscore"></p>
+    </div>
+
+    <div class="gpanel" data-g="quiz" hidden>
+      <div class="gbar"><span id="quizstat" class="gstat"></span><span class="gctl"><button type="button" class="ghost-btn" id="quiznew">New quiz</button></span></div>
+      <div class="quiz" id="quizbox"></div>
+    </div>
+
+    <div class="gpanel" data-g="cage" hidden>
+      <div class="gbar"><span id="cagestat" class="gstat"></span><span class="gctl"><button type="button" class="ghost-btn" id="cagenew">Play ball</button></span></div>
+      <div class="cage" id="cage">
+        <div class="mound" aria-hidden="true"></div>
+        <div class="zone" aria-hidden="true"></div>
+        <div class="ball" id="ball" aria-hidden="true"></div>
+        <div class="cage-msg" id="cagemsg" aria-live="polite">Tap Play ball, then swing when the ball crosses the plate.</div>
+      </div>
+      <button type="button" class="btn swing" id="swing">Swing!</button>
+      <p class="small quiet">Ten pitches. Perfect timing is a home run; a little early or late is a single or double. You can also tap the cage to swing.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="news-h" id="news">
+    <div class="sec-head"><h2 id="news-h">Team news</h2><p>From <a href="https://www.instagram.com/buzzeliteparsons10u/" target="_blank" rel="noopener">@buzzeliteparsons10u</a> on Instagram.</p></div>
+    <div class="news">
+      <a class="nw" href="https://www.instagram.com/buzzeliteparsons10u/p/Defw17YMDnH/" target="_blank" rel="noopener"><span class="nd">This week</span><b>On the field at Baylor</b><span>The girls got to step onto Getterman Stadium and learn from the Baylor Softball coaches and players. A day they won't forget.</span></a>
+      <a class="nw" href="https://www.instagram.com/buzzeliteparsons10u/p/DefjMhZxHmo/" target="_blank" rel="noopener"><span class="nd">Oct 17–18</span><b>Doubles &amp; Does</b><span>Back on the turf at Parsons. Double the hustle, double the trouble.</span></a>
+      <a class="nw" href="https://www.instagram.com/buzzeliteparsons10u/p/DeW3JVwxhJ1/" target="_blank" rel="noopener"><span class="nd">Oct 10–11</span><b>Pretty in pink</b><span>The team wore pink for Breast Cancer Awareness Month at Battle for the Bag.</span></a>
+      <a class="nw" href="https://www.instagram.com/buzzeliteparsons10u/p/DeUxMd-BGUY/" target="_blank" rel="noopener"><span class="nd">Birthdays</span><b>Claire #22 and KK #3</b><span>Happy birthday to our first baseman who can flat-out hit, and to KK, who pitches, runs and plays wherever the team needs her.</span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="recap-h" id="recap">
+    <div class="sec-head"><h2 id="recap-h">Last time out</h2><p>Battle for the Bag, Oct 10–11. 10U Gold, nine teams.</p></div>
+    <div class="recap">
+      <div class="recap-line"><span class="num big">2–3</span><span>on the weekend, tied for 5th. Three losses by a combined five runs. This team was a bounce or two from Sunday night.</span></div>
+      <div class="recap-games">
+        <div class="rg L"><span class="r">L</span><span class="sc">1–3</span><span>Texas Twisters <small>Sat, pool</small></span></div>
+        <div class="rg W"><span class="r">W</span><span class="sc">4–1</span><span>Hotshots Velasquez <small>Sat, pool</small></span></div>
+        <div class="rg L"><span class="r">L</span><span class="sc">2–3</span><span>Texas Twisters <small>Sat, bracket</small></span></div>
+        <div class="rg W"><span class="r">W</span><span class="sc">8–4</span><span>NL Bandits <small>Sun, elimination game</small></span></div>
+        <div class="rg L"><span class="r">L</span><span class="sc">1–3</span><span>Hotshots Velasquez <small>Sun, elimination game</small></span></div>
+      </div>
+      <p>Saturday: the Twisters got us 3–1 in pool play, we handled Velasquez 4–1, then the Twisters did it again in the bracket opener, 3–2, which dropped us into the losers bracket with everyone else's season on the line. Sunday morning we ran NL Bandits out of the building 8–4 and earned a rematch with Velasquez. That one didn't go our way. Texas Twisters, the team that beat us twice, went on to the winners final.</p>
+    </div>
+    <div class="weekly"><b>This week's hardware</b><span>New awards after every tournament, built from that weekend's games and posted the Monday after. Doubles &amp; Does winners post tomorrow morning.</span></div>
+    <div class="sec-head" style="margin-top:8px"><h2>Season hardware</h2><p>Our awards, not the tournament's. Fall 2026 numbers through Oct 11, from GameChanger.</p></div>
+    <div class="awards">
+      <div class="aw"><b>The Workhorse</b><span class="who">Etta J, #2</span><span>21⅓ innings, most on the staff. Ten games pitched, 381 pitches, 30 strikeouts, 1.97 ERA. When the ball's in her hand, the game slows down.</span></div>
+      <div class="aw"><b>The Bat</b><span class="who">Claire H, #22</span><span>Hitting .600. Eighteen hits and a team-high 21 RBI. If there's a runner on, she drives her in.</span></div>
+      <div class="aw"><b>Extra Bases</b><span class="who">Marissa G, #12</span><span>Eight doubles and two triples, the only slugging percentage on the team at 1.000. Also 78 putouts and a .975 fielding mark. Busy weekend, every weekend.</span></div>
+      <div class="aw"><b>The Engine</b><span class="who">Kalyn K, #3</span><span>Twenty runs scored, ten for ten stealing bases, and 33 strikeouts in the circle with a 1.92 ERA. Starts the rally and ends the inning.</span></div>
+      <div class="aw"><b>Flash</b><span class="who">Hazel W, #7</span><span>Twelve steals, zero caught. Once she's on base, she's gone. And in five innings in the circle: 11 strikeouts, zero runs allowed.</span></div>
+      <div class="aw"><b>Makes It Count</b><span class="who">Rayann O, #9</span><span>Two hits this fall, one of them a double, and four runs batted in. When she connects, somebody scores.</span></div>
+      <div class="aw"><b>Instant Offense</b><span class="who">Maggie R, #10</span><span>Three games, three trips to the plate, a hit and two RBI. Best RBI-per-trip-to-the-plate on the roster.</span></div>
+      <div class="aw"><b>Big Fly</b><span class="who">Jolee D, #20</span><span>The team's only home run of the fall. Eight RBI and six steals to go with it.</span></div>
+      <div class="aw"><b>Good Eye</b><span class="who">Brooklyn B, #00</span><span>A team-high 14 walks and a .625 on-base percentage. Pitchers have to earn it.</span></div>
+      <div class="aw"><b>Run Producer</b><span class="who">Margaret O, #45</span><span>Twelve RBI, 17 runs, five doubles, and 19 games played without missing one.</span></div>
+      <div class="aw"><b>Clutch</b><span class="who">Charli S, #27</span><span>Eleven RBI in just 14 games, .538 average, and a perfect fielding percentage.</span></div>
+      <div class="aw"><b>Patience</b><span class="who">Remi P, #8</span><span>Twelve walks and a .654 on-base percentage. Half her trips to the plate end with her on base.</span></div>
+      <div class="aw team"><b>The Whole Lineup</b><span class="who">Buzz Parsons 10U</span><span>Team average .421, 107 hits, 57 stolen bases at a 90% clip, and 100 strikeouts thrown by the pitching staff. Nineteen wins and counting.</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ranch-h">
+    <div class="sec-head"><h2 id="ranch-h">At the ranch</h2><p>1358 FM 2114, Clifton, TX 76634</p></div>
+    <p class="small">Gate: adults $20, kids 4 to 12 $10, seniors and veterans $10, 3 and under free. Players in uniform get in free. No coolers or outside food. Turf shoes or molded cleats only.</p>
+    <div class="links"><a href="https://share.google/3M99n7XX3BD6KrIXJ" target="_blank" rel="noopener">Directions</a></div>
+  </section>
+
+  <section aria-labelledby="spot-h" id="spotlight">
+    <div class="sec-head"><h2 id="spot-h">Player spotlight</h2><p>Pick a player, or tap her row in the table below, to see her fall numbers.</p></div>
+    <div class="chips" id="spotchips"></div>
+    <div class="spot" id="spotbody" aria-live="polite"></div>
+  </section>
+
+  <section aria-labelledby="team-h" id="team">
+    <div class="sec-head"><h2 id="team-h">Roster and stats</h2><p>Coaches Rachel Williams, Chris Owens and Shannon Summers. 12 players.</p></div>
+    <div class="leaders" id="leaders"></div>
+    <div class="tabs" id="stattabs">
+      <button type="button" data-s="batting" aria-pressed="true">Batting</button>
+      <button type="button" data-s="pitching" aria-pressed="false">Pitching</button>
+      <button type="button" data-s="fielding" aria-pressed="false">Fielding</button>
+    </div>
+    <div class="tbl-wrap"><table class="stats" id="stattable"></table></div>
+    <p class="small quiet"><b>What the letters mean</b></p>
+    <dl class="key" id="statkey"></dl>
+    <p class="small quiet">Tap a column heading to sort, or a player's row to open her spotlight. Season stats from GameChanger, current through Battle for the Bag.</p>
+  </section>
+
+  <section aria-labelledby="season-h">
+    <div class="sec-head"><h2 id="season-h">Fall 2026</h2><p>19 wins, 4 losses. Scores from GameChanger and the brackets.</p></div>
+    <div class="season" id="season"></div>
+  </section>
+
+  <section aria-labelledby="chat-h" id="chat">
+    <div class="sec-head"><h2 id="chat-h">Team chat</h2><p>Parents and coaches, plus a players' room the adults can read.</p></div>
+    <div class="chat-cta"><p>The chat lives on its own page so only invited families can get in. Ask Tevita for an invite, then enroll as a parent, coach or player.</p><a class="btn" id="chatlink" href="https://claude.ai/artifact/WZexgPCGXT5XXjkGQ4Ecr4" target="_blank" rel="noopener">Open the team chat</a></div>
+  </section>
+
+  <footer class="note">
+    <p id="liveStamp"></p>
+    <p>Bracket results as of Sunday 9:30 AM from the tournament's BracketHQ pages, plus this morning's 8–0 win from GameChanger (the bracket hadn't posted it yet). The brackets only show final scores. Live score opens GameChanger, which updates pitch by pitch when the team's scorekeeper is scoring. Watch opens that field's camera on Parsons Sports Network; it needs a free account.</p>
+    <p>Live bracket: <a href="https://brackethq.com/b/1htqd/" target="_blank" rel="noopener">10U Silver</a>. Finishing places assume teams knocked out in the same round tie.</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+<script>
+let ETTA="Buzz Elite"; const ETTA_LABEL="Buzz Parsons (us)";
+const WATCH="https://www.parsonssportsnetwork.com/watch-live/";
+const CAMS={"Sue Parsons Field":"sueParsonsField","Parker's Field":"parkersField","Remi's Field":"remisField","Parsons Field":"parsonsField"};
+const watchUrl=f=>CAMS[f]?WATCH+"?field="+CAMS[f]:null;
+const GC="https://web.gc.com/teams/XR8ChK0ezvRX/2026-fall-buzz-10u-parsons-10u";
+const DIV={G:{name:"10U Gold",short:"Gold",chip:"gold"},S:{name:"10U Silver",short:"Silver",chip:""}};
+const W=n=>({w:n}), L=n=>({l:n});
+const SEED=(v,n)=>DIV[v].short+" #"+n;
+// Pool play, Saturday morning (from GameChanger)
+const POOL=[["Texas Belles 2k16","L","1-7","final"],["Texas Trailblazers","W","7-6","final"]];
+// Six-team double elimination, both divisions. Seeds become team names once the tournament fills them in.
+const GAMES=[
+ {v:"G",n:1,b:"W",d:"Sat",t:"2:35 PM",f:"Sue Parsons Field",a:"Milam County",h:"TX Slam",as:2,hs:7},
+ {v:"G",n:5,b:"W",d:"Sat",t:"3:45 PM",f:"Sue Parsons Field",a:"Glory",h:W(1)},
+ {v:"G",n:2,b:"W",d:"Sun",t:"8:00 AM",f:"Parker's Field",a:"Ghost Riders",h:"NTX Peaches"},
+ {v:"G",n:6,b:"W",d:"Sun",t:"9:10 AM",f:"Sue Parsons Field",a:W(2),h:"TX Belles"},
+ {v:"G",n:4,b:"L",d:"Sun",t:"9:10 AM",f:"Remi's Field",a:L(5),h:L(2),place:"tied 5th"},
+ {v:"G",n:3,b:"L",d:"Sun",t:"10:20 AM",f:"Sue Parsons Field",a:L(6),h:L(1),place:"tied 5th"},
+ {v:"G",n:7,b:"L",d:"Sun",t:"12:40 PM",f:"Sue Parsons Field",a:W(3),h:W(4),place:"4th"},
+ {v:"G",n:8,b:"W",d:"Sun",t:"3:00 PM",f:"Sue Parsons Field",a:W(5),h:W(6)},
+ {v:"G",n:9,b:"L",d:"Sun",t:"5:20 PM",f:"Sue Parsons Field",a:L(8),h:W(7),place:"3rd"},
+ {v:"G",n:10,b:"F",d:"Sun",t:"6:30 PM",f:"Sue Parsons Field",a:W(8),h:W(9)},
+ {v:"G",n:11,b:"F2",d:"Sun",t:"7:40 PM",f:"Sue Parsons Field",of:10},
+
+ {v:"S",n:1,b:"W",d:"Sat",t:"2:35 PM",f:"Remi's Field",a:"Thunderbird",h:"TX Trailblazers",as:1,hs:10},
+ {v:"S",n:5,b:"W",d:"Sat",t:"4:55 PM",f:"Sue Parsons Field",a:"GTX Crush",h:W(1),as:4,hs:6},
+ {v:"S",n:2,b:"W",d:"Sat",t:"6:05 PM",f:"Sue Parsons Field",a:"Buzz Elite",h:"Waco Warriors",as:12,hs:0,s:1,flag:"Our scorebook has this one 13–0."},
+ {v:"S",n:6,b:"W",d:"Sun",t:"8:00 AM",f:"Sue Parsons Field",a:W(2),h:"Magic FP",as:8,hs:0,s:1},
+ {v:"S",n:4,b:"L",d:"Sun",t:"8:00 AM",f:"Remi's Field",a:L(5),h:L(2),place:"tied 5th"},
+ {v:"S",n:3,b:"L",d:"Sun",t:"9:10 AM",f:"Parker's Field",a:L(6),h:L(1),place:"tied 5th"},
+ {v:"S",n:7,b:"L",d:"Sun",t:"10:20 AM",f:"Remi's Field",a:W(3),h:W(4),place:"4th"},
+ {v:"S",n:8,b:"W",d:"Sun",t:"11:30 AM",f:"Sue Parsons Field",a:W(5),h:W(6)},
+ {v:"S",n:9,b:"L",d:"Sun",t:"1:50 PM",f:"Sue Parsons Field",a:L(8),h:W(7),place:"3rd"},
+ {v:"S",n:10,b:"F",d:"Sun",t:"4:10 PM",f:"Sue Parsons Field",a:W(8),h:W(9)},
+ {v:"S",n:11,b:"F2",d:"Sun",t:"",f:"Sue Parsons Field",of:10,flag:"If-needed game time not posted yet."},
+];
+const LAYOUT={
+ G:{w:[["Round 1",[1,2]],["Semifinals",[5,6]],["Winners final",[8]]],l:[["Losers 1",[3,4]],["Losers 2",[7]],["Losers final",[9]]],f:[["Championship",[10]],["If needed",[11]]]},
+ S:{w:[["Round 1",[1,2]],["Semifinals",[5,6]],["Winners final",[8]]],l:[["Losers 1",[3,4]],["Losers 2",[7]],["Losers final",[9]]],f:[["Championship",[10]],["If needed",[11]]]}
+};
+const BUZZ=[];
+const SEASON=[["Aug 29","Waco Wood Ducks","W","7-0"],["Aug 29","Storm 10U Blue","W","5-3"],["Aug 30","Buzz Bold 9U","W","6-2"],["Aug 30","Waco Wood Ducks","W","2-1"],["Aug 30","Waco Wood Ducks","W","1-0"],["Sep 13","TX Chaos","W","8-0"],["Sep 13","RobCo Rowdies","W","9-0"],["Sep 13","TX Chaos","W","8-4"],["Sep 13","RobCo Rowdies","W","10-1"],["Sep 26","PC Havoc 9U","W","11-0"],["Sep 26","Pink Sox","W","7-1"],["Sep 27","PC Havoc 9U","W","9-0"],["Sep 27","Pink Sox","W","9-1"],["Sep 27","Pink Sox","W","6-1"],["Oct 10","Texas Twisters","L","1-3"],["Oct 10","Hotshots Velazquez","W","4-1"],["Oct 10","Texas Twisters","L","2-3"],["Oct 11","NL Bandits","W","8-4"],["Oct 11","Hotshots Velasquez","L","1-3"],["Oct 17","Texas Belles 2k16","L","1-7"],["Oct 17","Texas Trailblazers","W","7-6"],["Oct 17","Waco Warriors","W","13-0"],["Oct 18","Magic FP","W","8-0"]];
+const DAYN={Sat:0,Sun:1};
+const sortKey=g=>DAYN[g.d]*2000+mins(g.t);
+function todayKey(){const d=new Date().toLocaleDateString("en-US",{timeZone:"America/Chicago",month:"numeric",day:"numeric"});return d==="10/17"?"Sat":d==="10/18"?"Sun":null}
+const G=(v,n)=>GAMES.find(g=>g.v===v&&g.n===n);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const mins=t=>{if(!t)return -1;const m=t.match(/(\d+):(\d+) (AM|PM)/);return (m[1]%12+(m[3]==="PM"?12:0))*60+ +m[2]};
+const nm=n=>n===ETTA?ETTA_LABEL:n;
+let picks={}; try{picks=JSON.parse(localStorage.getItem("buzz-picks-1017")||"{}")}catch(e){picks={}}
+let view="S", filter="all";
+try{filter=localStorage.getItem("buzz-filter-1017")||"all"}catch(e){}
+filter="mine";
+const save=()=>{try{localStorage.setItem("buzz-picks-1017",JSON.stringify(picks))}catch(e){}};
+
+function teams(g,p){
+  if(g.b==="F2"){const f=G(g.v,g.of);const [a,h]=teams(f,p);const w=winner(f,p);return (w&&w===h)?[a,h]:[null,null]}
+  return [slot(g.v,g.a,p),slot(g.v,g.h,p)];
+}
+function slot(v,s,p){ if(typeof s==="string")return s; const g=G(v,s.w??s.l); return s.w!=null?winner(g,p):loser(g,p) }
+function winner(g,p){ const [a,h]=teams(g,p); if(g.as!=null)return g.as>g.hs?a:h; const k=g.v+g.n; if(p&&p[k]&&(p[k]===a||p[k]===h))return p[k]; return null }
+function loser(g,p){ const w=winner(g,p); if(!w)return null; const [a,h]=teams(g,p); return w===a?h:a }
+function label(v,s){ if(typeof s==="string")return s; return (s.w!=null?"Winner of game ":"Loser of game ")+(s.w??s.l) }
+function possible(v,s,p){
+  if(typeof s==="string")return [s];
+  const g=G(v,s.w??s.l); const r=s.w!=null?winner(g,p):loser(g,p); if(r)return [r];
+  return [...new Set([...possible(v,g.a,p),...possible(v,g.h,p)])];
+}
+function champion(v,p){ const f=GAMES.find(g=>g.v===v&&g.b==="F"), f2=GAMES.find(g=>g.v===v&&g.b==="F2");
+  const w=winner(f,p); if(!w)return null; const [a]=teams(f,p); if(w===a)return w; return winner(f2,p) }
+function dropTo(g){ return GAMES.find(x=>x.v===g.v&&x.b==="L"&&((x.a&&x.a.l===g.n)||(x.h&&x.h.l===g.n))) }
+const gameLine=x=>x?`game ${x.n}, ${x.d==="Sat"?"Saturday":"Sunday"} ${x.t||"TBA"}`:"";
+function road(team,v,p0){
+  const p={...p0}; const steps=[]; let guard=0;
+  while(guard++<12){
+    const g=GAMES.filter(g=>g.v===v).sort((a,b)=>sortKey(a)-sortKey(b)).find(g=>g.as==null&&!(p[g.v+g.n]&&teams(g,p).includes(p[g.v+g.n]))&&teams(g,p).includes(team));
+    if(!g)break;
+    const [a,h]=teams(g,p); const otherSlot=g.b==="F2"?null:(a===team?g.h:g.a);
+    let opp=g.b==="F2"?[a===team?h:a].filter(Boolean):possible(v,otherSlot,p).filter(x=>x!==team);
+    if(!opp.length&&steps.length)opp=steps[steps.length-1].opp;
+    let win,lose;
+    if(g.b==="W"){win="still in the winners bracket";lose="drop to "+gameLine(dropTo(g))}
+    else if(g.b==="L"){win="keep going";lose="out, finish "+g.place}
+    else if(g.b==="F"){ if(a===team){win="champions";lose="force "+gameLine(GAMES.find(x=>x.v===v&&x.b==="F2"))} else {win="force "+gameLine(GAMES.find(x=>x.v===v&&x.b==="F2"));lose="finish 2nd"} }
+    else {win="champions";lose="finish 2nd"}
+    steps.push({g,opp,win,lose}); p[g.v+g.n]=team;
+  }
+  return {steps,champ:champion(v,p)===team};
+}
+function status(team,v){
+  const elim=GAMES.find(g=>g.v===v&&g.as!=null&&(g.b==="L"||g.b==="F2")&&loser(g,{})===team);
+  return elim?{out:true,place:elim.place||"2nd"}:{out:false};
+}
+const oppText=o=>o.length===1?esc(o[0]):"<em>"+esc(o.join(" or "))+"</em>";
+function watchLinks(g,mine){
+  if(g.as!=null)return "";
+  const u=watchUrl(g.f); if(!u&&!mine)return "";
+  return `<span class="wl">${u?`<a href="${u}" target="_blank" rel="noopener" aria-label="Watch game ${g.n} live on the ${esc(g.f)} camera">Watch</a>`:""}${mine?`<a href="${GC}" target="_blank" rel="noopener">Live score</a>`:""}</span>`;
+}
+
+const OURDIV=()=>"S";
+function renderSeedPick(){return;
+  const el=document.getElementById("seedpick");
+  const btn=(v,n)=>{const s=SEED(v,n);return `<button type="button" data-seed="${s}" aria-pressed="${ETTA===s}">${s}</button>`};
+  el.innerHTML=`<div class="sp-h"><b>Where did we seed?</b><span class="quiet small">Pick it once the coach tells you. The whole page then follows us.</span></div>
+    <div class="sp-row"><span class="sp-l">Gold</span>${[1,2,3,4,5,6].map(n=>btn("G",n)).join("")}</div>
+    <div class="sp-row"><span class="sp-l">Silver</span>${[1,2,3,4,5,6].map(n=>btn("S",n)).join("")}</div>
+    ${ETTA?`<button type="button" class="ghost-btn" data-seed="">Clear</button>`:""}`;
+}
+function renderBoard(){
+  const el=document.getElementById("board");
+  const live=POOL.find(p=>p[3]==="live"), done=POOL.filter(p=>p[3]==="final");
+  if(!ETTA){
+    el.className="board";
+    el.innerHTML=`<div class="board-k"><span>Saturday pool play</span><span>Seeds set after these games</span></div>
+      ${live?`<div class="board-time">Now</div><div class="board-vs">Buzz Parsons 10U vs ${esc(live[0])}</div>`:`<div class="board-time">Pool play</div>`}
+      <div class="board-meta">${done.map(p=>`<span>${p[1]} ${p[2]} vs ${esc(p[0])}</span>`).join("")}</div>
+      <div class="board-actions"><a class="btn" href="${GC}" target="_blank" rel="noopener"><span class="dot"></span>Live score and video</a><a class="btn ghost" href="${WATCH}" target="_blank" rel="noopener">Ranch cameras</a></div>`;
+    return;
+  }
+  const v=OURDIV(); const st=status(ETTA,v);
+  if(st.out){el.className="board done";el.innerHTML=`<div class="board-k">${DIV[v].name}</div><div class="board-time">Finished ${esc(st.place)}</div>`;return}
+  const r=road(ETTA,v,{}); const s=r.steps[0];
+  if(!s){el.className="board done";el.innerHTML=`<div class="board-time">${r.champ?"Champions!":"No games left on the board"}</div>`;return}
+  el.className="board";
+  el.innerHTML=`<div class="board-k"><span>Next game, ${s.g.d==="Sat"?"Saturday":"Sunday"}</span><span>Game ${s.g.n}, ${DIV[v].name}</span></div>
+    <div class="board-time">${esc(s.g.t||"TBA")}</div>
+    <div class="board-vs">Buzz Parsons 10U vs ${oppText(s.opp)}</div>
+    <div class="board-meta"><span>${esc(s.g.f)}</span>${s.g.b==="L"?`<span>Lose and we're out</span>`:""}</div>
+    ${s.g.flag?`<div class="board-warn">${esc(s.g.flag)}</div>`:""}
+    <div class="board-count" id="count" data-at="${gameAt(s.g)}"></div>
+    ${lastChip()}
+    <div class="board-actions"><a class="btn" href="${GC}" target="_blank" rel="noopener"><span class="dot"></span>Live score</a><button type="button" class="btn hype" data-hype>Buzz win!</button>${watchUrl(s.g.f)?`<a class="btn ghost" href="${watchUrl(s.g.f)}" target="_blank" rel="noopener">Watch ${esc(s.g.f)}</a>`:""}</div>`;
+}
+function renderRoad(){
+  const el=document.getElementById("road");
+  if(!ETTA){el.innerHTML=`<p class="quiet">Pick our seed above and this fills in: every game we could play, who we'd face, and what a win or loss means.</p>`;return}
+  const v=OURDIV(); const st=status(ETTA,v);
+  if(st.out){el.innerHTML=`<p class="quiet">Finished ${esc(st.place)}.</p>`;return}
+  const r=road(ETTA,v,picks);
+  el.innerHTML=r.steps.map(s=>`<div class="step"><div class="step-time">${esc(s.g.t||"TBA")}<small>${s.g.d} · Game ${s.g.n}</small></div><div class="step-body">
+     <div class="step-title">vs ${oppText(s.opp)} <span class="quiet small">${esc(s.g.f)}</span></div>
+     <div class="forks"><span class="fork w">Win: ${esc(s.win)}</span><span class="fork l">Lose: ${esc(s.lose)}</span></div>
+   </div></div>`).join("")+(r.steps.length?`<div class="step champ"><div class="step-time">🏆</div><div class="step-body"><div class="step-title">Win it all</div><div class="quiet">${r.steps.length} straight win${r.steps.length===1?"":"s"} from here.</div></div></div>`:"");
+}
+function teamRow(g,side,name,p){
+  const [a,h]=teams(g,p); const real=g.as!=null; const sc=side==="a"?g.as:g.hs; const oth=side==="a"?g.hs:g.as;
+  const slotDef=side==="a"?g.a:g.h; const text=name?nm(name):(g.b==="F2"?"If needed":label(g.v,slotDef));
+  let cls="tm", attrs="";
+  if(real)cls+=sc>oth?" won":" lost";
+  else if(a&&h){ const pk=p[g.v+g.n]; if(pk===name)cls+=" picked"; else if(pk===a||pk===h)cls+=" picked-out"; attrs=` data-pick="${esc(name)}" data-g="${g.v+g.n}" aria-label="Pick ${esc(name)} to win game ${g.n}"`; }
+  if(name===ETTA)cls+=" etta";
+  const tag=attrs?"button":"div";
+  return `<${tag}${attrs?' type="button"':""} class="${cls}"${attrs}><span class="nm ${name?"":"ph"}">${esc(text)}</span>${real?`<span class="sc">${sc}</span>`:""}</${tag}>`;
+}
+function matchCard(g){
+  const [a,h]=teams(g,picks); const mine=a===ETTA||h===ETTA;
+  return `<div class="m ${mine?"mine":""}"><div class="m-h"><b>Game ${g.n}${g.t?`<span>${esc(g.d)} ${esc(g.t)}</span>`:""}</b><span>${esc(g.f)}</span></div>${teamRow(g,"a",a,picks)}${teamRow(g,"h",h,picks)}${watchLinks(g,mine)}</div>`;
+}
+function renderBracket(){
+  document.querySelectorAll("#divtabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===view));
+  const L_=LAYOUT[view]; const cols=list=>`<div class="bk-row">${list.map(([t,ns])=>`<div class="bk-col"><h4>${t}</h4>${ns.map(n=>matchCard(G(view,n))).join("")}</div>`).join("")}</div>`;
+  document.getElementById("bracket").innerHTML=`<div class="bk-half"><h3>Winners bracket</h3>${cols(L_.w)}</div><div class="bk-half"><h3>Losers bracket</h3>${cols(L_.l)}</div><div class="bk-half"><h3>Final</h3>${cols(L_.f)}</div>`;
+  const c=champion(view,picks); const n=Object.keys(picks).filter(k=>k[0]===view).length; const el=document.getElementById("champ");
+  el.hidden=!c&&!n; el.textContent=c?`With these picks, ${nm(c)} wins ${DIV[view].name}.`:`${n} pick${n>1?"s":""} in ${DIV[view].name}.`;
+}
+function renderTimeline(){
+  document.querySelectorAll("#filters button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.f===filter));
+  const list=GAMES.filter(g=>g.b!=="F2").map(g=>{const [a,h]=teams(g,{});return {g,a,h}}).filter(({g})=>{
+    if(filter==="all")return true;
+    const pa=[...possible(g.v,g.a,{}),...possible(g.v,g.h,{})];
+    return filter==="mine"?(ETTA&&pa.includes(ETTA)):true;
+  });
+  const out=[];
+  const tk=todayKey();
+  for(const day of ["Sat","Sun"]){
+    const dg=list.filter(x=>x.g.d===day).sort((x,y)=>mins(x.g.t)-mins(y.g.t)||x.g.v.localeCompare(y.g.v)); if(!dg.length)continue;
+    out.push(`<div class="day-h">${day==="Sun"?"Sunday":"Saturday"}${tk===day?", today":""}</div>`+dg.map(row).join(""));
+  }
+  document.getElementById("timeline").innerHTML=out.join("");
+}
+function row({g,a,h}){
+  const fin=g.as!=null; const mine=a===ETTA||h===ETTA;
+  const t=(n,s,sc,o)=>`<div class="t ${fin?(sc>o?"win":"lose"):""}"><span class="${n?"":"ph"}">${esc(n?nm(n):label(g.v,s))}</span>${fin?`<span class="s">${sc}</span>`:""}</div>`;
+  const foot=(g.flag||!fin)?`<div class="row-foot">${g.flag?`<span class="warn">${esc(g.flag)}</span>`:""}${watchLinks(g,mine)}</div>`:"";
+  return `<div class="row ${mine?"mine":""}"><div class="row-time">${esc(g.t||"TBA")}</div><div class="row-teams">${t(a,g.a,g.as,g.hs)}${t(h,g.h,g.hs,g.as)}</div>
+    <div class="row-meta"><span><span class="chip ${DIV[g.v].chip}">${DIV[g.v].short}</span> game ${g.n}</span><span>${esc(g.f)}</span>${g.b==="L"&&!fin?'<span class="chip elim">Elimination</span>':""}${g.b==="F"?'<span class="chip">Championship</span>':""}</div>${foot}</div>`;
+}
+// Season stats from GameChanger, Fall 2026, 19 games (16-3).
+const STATS={
+ batting:{cols:["GP","PA","AB","AVG","OBP","OPS","SLG","H","1B","2B","3B","HR","RBI","R","BB","SO","HBP","SB","CS"],rows:[
+  ["Claire H","22",19,35,30,".600",".657","1.457",".800",18,13,4,1,0,21,13,5,2,0,7,3],
+  ["Marissa G","12",19,37,29,".586",".676","1.676","1.000",17,7,8,2,0,9,10,7,2,1,6,0],
+  ["Charli S","27",14,21,13,".538",".700","1.546",".846",7,4,2,1,0,11,4,6,2,1,2,0],
+  ["Kalyn K","3",19,37,31,".484",".568","1.084",".516",15,14,1,0,0,4,20,6,4,0,10,0],
+  ["Margaret O","45",19,37,31,".484",".556","1.201",".645",15,10,5,0,0,12,17,5,6,0,6,1],
+  ["Remi P","8",18,26,14,".357",".654","1.082",".429",5,4,1,0,0,4,7,12,8,0,1,0],
+  ["Etta J","2",18,35,32,".344",".400",".931",".531",11,5,6,0,0,9,7,3,8,0,0,0],
+  ["Maggie R","10",3,3,3,".333",".333",".667",".333",1,1,0,0,0,2,0,0,0,0,0,0],
+  ["Brooklyn B","00",19,33,17,".294",".625",".919",".294",5,5,0,0,0,2,11,14,5,1,7,1],
+  ["Jolee D","20",18,26,17,".294",".538","1.009",".471",5,4,0,0,1,8,9,7,6,2,6,0],
+  ["Hazel W","7",19,34,24,".250",".471",".721",".250",6,6,0,0,0,6,12,8,15,2,12,0],
+  ["Rayann O","9",14,15,13,".154",".267",".497",".231",2,1,1,0,0,4,4,2,9,0,0,1],
+  ["Team","",19,339,254,".421",".563","1.137",".575",107,74,28,4,1,92,114,75,67,7,57,6]],
+  low:[]},
+ pitching:{cols:["IP","GP","GS","BF","Pitches","H","R","ER","BB","SO","HBP","ERA","WHIP","SB"],rows:[
+  ["Etta J","2","21.1",10,7,95,381,12,11,7,16,30,2,"1.97","1.31",6],
+  ["Kalyn K","3","15.2",9,5,76,310,5,7,5,21,33,2,"1.92","1.66",8],
+  ["Charli S","27","13.0",6,4,57,265,4,9,8,19,21,1,"3.69","1.77",4],
+  ["Hazel W","7","5.0",3,2,20,86,1,0,0,4,11,0,"0.00","1.00",4],
+  ["Claire H","22","1.0",1,0,5,24,0,0,0,2,3,0,"0.00","2.00",0],
+  ["Team","","56.1",19,19,255,1084,22,28,20,63,100,5,"2.13","1.51",23]],
+  low:["ERA","WHIP","H","R","ER","BB","HBP","SB"]},
+ fielding:{cols:["TC","PO","A","E","FPCT"],rows:[
+  ["Marissa G","12",80,78,0,2,".975"],["Kalyn K","3",17,16,0,1,".941"],["Etta J","2",18,16,0,2,".889"],
+  ["Hazel W","7",17,14,1,2,".882"],["Margaret O","45",10,9,0,1,".900"],["Brooklyn B","00",10,9,0,1,".900"],
+  ["Charli S","27",5,5,0,0,"1.000"],["Claire H","22",4,3,0,1,".750"],["Jolee D","20",1,1,0,0,"1.000"],
+  ["Maggie R","10",0,0,0,0,"-"],["Rayann O","9",0,0,0,0,"-"],["Remi P","8",0,0,0,0,"-"],
+  ["Team","",180,168,1,11,".939"]],
+  low:["E"]}
+};
+const LEADERS=[["Batting average","Claire H",".600"],["OPS","Marissa G","1.676"],["Hits","Claire H","18"],["RBI","Claire H","21"],["Runs","Kalyn K","20"],["Doubles","Marissa G","8"],["Stolen bases","Hazel W","12"],["Strikeouts, pitching","Kalyn K","33"],["Innings pitched","Etta J","21.1"]];
+let statView="batting", sortCol=null, sortDir="desc";
+const numv=v=>{if(typeof v==="number")return v;if(v==="-")return -Infinity;const n=parseFloat(v);return isNaN(n)?-Infinity:n};
+function renderLeaders(){document.getElementById("leaders").innerHTML=LEADERS.map(([k,n,v])=>`<div class="leader"><span class="k">${k}</span><span class="n">${n===ETTA_NAME?"Etta J":esc(n)}</span><span class="v">${v}</span></div>`).join("")}
+const ETTA_NAME="Etta J";
+function renderStats(){
+  document.querySelectorAll("#stattabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.s===statView));
+  const S=STATS[statView]; const rows=S.rows.filter(r=>r[0]!=="Team"); const team=S.rows.find(r=>r[0]==="Team");
+  if(sortCol!=null){const i=sortCol+2;rows.sort((a,b)=>(numv(b[i])-numv(a[i]))*(sortDir==="desc"?1:-1))}
+  const qual=r=>statView!=="batting"||numv(r[3])>=10;
+  const hiCols=statView==="fielding"?["FPCT","PO","TC"]:S.cols;
+  const best={}; S.cols.forEach((c,i)=>{if(!hiCols.includes(c))return;const vals=rows.filter(qual).map(r=>numv(r[i+2])).filter(v=>v>-Infinity); if(!vals.length)return; best[i]=S.low.includes(c)?Math.min(...vals):Math.max(...vals)});
+  const th=S.cols.map((c,i)=>`<th data-i="${i}"${sortCol===i?` aria-sort="${sortDir==="desc"?"descending":"ascending"}"`:""}>${c}</th>`).join("");
+  const tr=r=>`<tr data-p="${esc(r[0])}" class="${r[0]===spotSel?"sel":""}" title="Show ${esc(r[0])}'s spotlight"><td>${esc(r[0])}<small>#${r[1]}</small></td>${S.cols.map((c,i)=>{const v=r[i+2];const hi=best[i]!=null&&qual(r)&&numv(v)===best[i];return `<td class="${hi?"hi":""}">${v}</td>`}).join("")}</tr>`;
+  renderKey();document.getElementById("stattable").innerHTML=`<thead><tr><th>Player</th>${th}</tr></thead><tbody>${rows.map(tr).join("")}<tr class="team"><td>Team</td>${S.cols.map((c,i)=>`<td>${team[i+2]}</td>`).join("")}</tr></tbody>`;
+}
+document.getElementById("stattabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;statView=b.dataset.s;sortCol=null;renderStats()});
+document.getElementById("stattable").addEventListener("click",e=>{const th=e.target.closest("th[data-i]");if(!th)return;const i=+th.dataset.i;if(sortCol===i)sortDir=sortDir==="desc"?"asc":"desc";else{sortCol=i;sortDir=STATS[statView].low.includes(STATS[statView].cols[i])?"asc":"desc"}renderStats()});
+const FIELDS=["Sue Parsons Field","Parker's Field","Remi's Field"];
+function nowMins(){const d=new Date(),t=new Date(d.toLocaleString("en-US",{timeZone:"America/Chicago"}));return t.getHours()*60+t.getMinutes()}
+function renderFields(){
+  const nm_=nowMins(); const tk=todayKey();
+  document.getElementById("fields-clock").textContent=tk?(tk==="Sat"?"Saturday":"Sunday")+", as of "+new Date().toLocaleTimeString("en-US",{timeZone:"America/Chicago",hour:"numeric",minute:"2-digit"})+" at the ranch":"Both days";
+  document.getElementById("fieldboard").innerHTML=FIELDS.map(f=>{
+    const gs=GAMES.filter(g=>g.f===f&&g.b!=="F2").sort((a,b)=>sortKey(a)-sortKey(b));
+    let nowIdx=-1; gs.forEach((g,i)=>{if(tk&&g.d===tk&&mins(g.t)<=nm_&&g.as==null)nowIdx=i});
+    const firstUp=gs.findIndex((g,i)=>g.as==null&&i>nowIdx&&(!tk||DAYN[g.d]>DAYN[tk]||(g.d===tk&&mins(g.t)>nm_)));
+    const u=watchUrl(f); let lastDay="";
+    const rows=gs.map((g,i)=>{const [a,h]=teams(g,{});const fin=g.as!=null;const us=ETTA&&(a===ETTA||h===ETTA);
+      const tag=i===nowIdx?"Now":i===firstUp?"Next":fin?"Final":"";
+      const dayh=g.d!==lastDay?`<div class="fd">${g.d==="Sat"?"Saturday":"Sunday"}</div>`:""; lastDay=g.d;
+      const line=(n,s,sc,o)=>`<div class="l ${fin&&sc<o?"lose":""}"><span>${esc(n?nm(n):label(g.v,s))}</span>${fin?`<span class="s">${sc}</span>`:""}</div>`;
+      return dayh+`<div class="fg ${i===nowIdx?"now":""} ${fin?"done":""} ${us?"us":""}"><div class="ft">${esc(g.t||"TBA")}<small>${tag}</small></div><div class="fm">${line(a,g.a,g.as,g.hs)}${line(h,g.h,g.hs,g.as)}<div class="g">${DIV[g.v].short} game ${g.n}${g.b==="L"?", elimination":g.b==="F"?", championship":""}</div></div></div>`}).join("");
+    return `<div class="fld"><div class="fld-h"><span><b>${esc(f)}</b></span>${u?`<a href="${u}" target="_blank" rel="noopener">Watch</a>`:""}</div>${rows}</div>`;
+  }).join("");
+}
+const KEY={GP:"Games played",PA:"Plate appearances",AB:"At-bats",AVG:"Batting average: hits per at-bat",OBP:"On-base percentage",OPS:"On-base plus slugging",SLG:"Slugging: total bases per at-bat",H:"Hits","1B":"Singles","2B":"Doubles","3B":"Triples",HR:"Home runs",RBI:"Runs batted in",R:"Runs scored",BB:"Walks",SO:"Strikeouts",HBP:"Hit by pitch",SB:"Stolen bases",CS:"Caught stealing",
+  IP:"Innings pitched (.1 is one out, .2 is two)",GS:"Games started",BF:"Batters faced",Pitches:"Pitches thrown",ER:"Earned runs",ERA:"Earned runs per 6 innings",WHIP:"Walks plus hits per inning",
+  TC:"Total chances",PO:"Putouts",A:"Assists",E:"Errors",FPCT:"Fielding percentage"};
+const KEY_P={GP:"Games pitched",H:"Hits allowed",R:"Runs allowed",BB:"Walks issued",SO:"Strikeouts thrown",HBP:"Batters hit by a pitch",SB:"Stolen bases allowed"};
+function renderKey(){const cols=STATS[statView].cols;document.getElementById("statkey").innerHTML=cols.map(c=>`<div><dt>${esc(c)}</dt><dd>${esc((statView==="pitching"&&KEY_P[c])||KEY[c]||c)}</dd></div>`).join("")}
+let spotSel=null;try{spotSel=localStorage.getItem("buzz-spot")||null}catch(e){}
+function spotPick(n){spotSel=n;try{n?localStorage.setItem("buzz-spot",n):localStorage.removeItem("buzz-spot")}catch(e){}renderSpot();renderStats()}
+function renderSpot(){
+  const B=STATS.batting.rows,P=STATS.pitching.rows,Fd=STATS.fielding.rows;
+  const players=B.filter(r=>r[0]!=="Team").sort((a,b)=>(+a[1]||0)-(+b[1]||0)||a[1].length-b[1].length);
+  document.getElementById("spotchips").innerHTML=`<button type="button" data-spot="" aria-pressed="${!spotSel}">Whole team</button>`+players.map(r=>`<button type="button" data-spot="${esc(r[0])}" aria-pressed="${spotSel===r[0]}"><small>#${r[1]}</small>${esc(r[0])}</button>`).join("");
+  const name=spotSel||"Team"; const b=B.find(r=>r[0]===name), p=P.find(r=>r[0]===name), f=Fd.find(r=>r[0]===name);
+  if(!b){spotSel=null;return renderSpot()}
+  const isTeam=name==="Team";
+  const lead=(rows,idx,min)=>{if(isTeam)return false;const l=leader(rows,idx,min);return !!(l&&l.name===name)};
+  const tile=(v,label,isLead)=>`<div class="tile ${isLead?"lead":""}"><b>${v}</b><span>${label}${isLead?", team leader":""}</span></div>`;
+  const bat=[[b[5],"batting average",lead(B,5,r=>+r[4]>=10)],[b[9],"hits",lead(B,9)],[b[11],"doubles",lead(B,11)],[b[14],"RBI",lead(B,14)],[b[15],"runs scored",lead(B,15)],[b[19],"stolen bases",lead(B,19)],[b[16],"walks",lead(B,16)],[b[7],"OPS",lead(B,7,r=>+r[4]>=10)]];
+  if(+b[13]>0)bat.splice(3,0,[b[13],b[13]==1?"home run":"home runs",lead(B,13)]);
+  let html=`<div class="spot-head"><h3>${isTeam?"Buzz Parsons 10U":esc(name)+" #"+b[1]}</h3>${!isTeam&&AWARD[name]?`<span class="aw-tag">${esc(AWARD[name])}</span>`:""}<span class="quiet small">${b[2]} games this fall${isTeam?", "+document.querySelector(".rec .num")?.textContent+" record":""}</span></div>
+    <div class="spot-group"><p class="small quiet">At the plate</p><div class="spot-tiles">${bat.map(t=>tile(...t)).join("")}</div></div>`;
+  if(p)html+=`<div class="spot-group"><p class="small quiet">In the circle</p><div class="spot-tiles">${[[p[11],"strikeouts",lead(P,11)],[p[2],"innings pitched",lead(P,2)],[p[13],"ERA",false],[p[14],"WHIP",false],[p[6],"pitches thrown",lead(P,6)]].map(t=>tile(...t)).join("")}</div></div>`;
+  if(f&&+f[2]>0)html+=`<div class="spot-group"><p class="small quiet">In the field</p><div class="spot-tiles">${[[f[6],"fielding percentage",false],[f[3],"putouts",lead(Fd,3)],[f[2],"chances",lead(Fd,2)]].map(t=>tile(...t)).join("")}</div></div>`;
+  document.getElementById("spotbody").innerHTML=html;
+}
+document.getElementById("spotchips").addEventListener("click",e=>{const b=e.target.closest("[data-spot]");if(!b)return;spotPick(b.dataset.spot||null)});
+document.getElementById("stattable").addEventListener("click",e=>{if(e.target.closest("th"))return;const tr=e.target.closest("tr[data-p]");if(!tr)return;spotPick(tr.dataset.p);document.getElementById("spotlight").scrollIntoView({behavior:calm()?"auto":"smooth",block:"start"})});
+function renderSeason(){
+  document.getElementById("season").innerHTML=SEASON.map(([d,o,r,s])=>`<div class="res ${r}"><span class="r">${r}</span><span class="sc">${s}</span><span class="o">${esc(o)} <small>${d}</small></span></div>`).join("");
+}
+function gameAt(g){if(!g.t)return "";const m=g.t.match(/(\d+):(\d+) (AM|PM)/);const hh=(m[1]%12+(m[3]==="PM"?12:0));const day=g.d==="Sat"?"2026-10-17":"2026-10-18";return Date.parse(day+"T"+String(hh).padStart(2,"0")+":"+m[2]+":00-05:00")}
+function tickCount(){const el=document.getElementById("count");if(!el)return;const at=+el.dataset.at;if(!at){el.textContent="";return}const d=at-Date.now();
+  if(d>0){const m=Math.round(d/60000),hh=Math.floor(m/60),mm=m%60;el.textContent="First pitch in "+(hh?hh+"h ":"")+mm+"m"}
+  else if(d>-110*60000){el.textContent="Game on!"} else el.textContent="";}
+function lastChip(){const l=SEASON[SEASON.length-1];if(!l)return "";return `<span class="last ${l[2]}"><b>${l[2]} ${esc(l[3].replace("-","–"))}</b> last time vs ${esc(l[1])}</span>`}
+const AWARD={"Claire H":"The Bat","Marissa G":"Extra Bases","Kalyn K":"The Engine","Hazel W":"Flash","Jolee D":"Big Fly","Brooklyn B":"Good Eye","Margaret O":"Run Producer","Charli S":"Clutch","Remi P":"Patience","Rayann O":"Makes It Count","Maggie R":"Instant Offense","Etta J":"The Workhorse"};
+function renderCards(){
+  const bat=STATS.batting.rows.filter(r=>r[0]!=="Team"), pit=STATS.pitching.rows.filter(r=>r[0]!=="Team");
+  const order=[...bat].sort((a,b)=>(+a[1]||0)-(+b[1]||0)||a[1].length-b[1].length);
+  document.getElementById("cardgrid").innerHTML=order.map(r=>{
+    const p=pit.find(x=>x[0]===r[0]);
+    const st=[["AVG",r[5]],["Hits",r[9]],["RBI",r[14]],["Runs",r[15]],["Doubles",r[11]],["Steals",r[19]]];
+    if(p)st.splice(4,2,["Strikeouts",p[11]],["ERA",p[13]]);
+    return `<button type="button" class="tc" aria-pressed="false" aria-label="${esc(r[0])}, number ${r[1]}. Flip for stats.">
+      <span class="tc-in">
+        <span class="tc-f"><span class="tc-top"><span class="bz">Buzz</span><span>10U</span></span><span class="tc-num">${r[1]}</span><span class="tc-name">${esc(r[0])}</span><span class="tc-aw">${esc(AWARD[r[0]]||"Buzz Elite")}</span></span>
+        <span class="tc-b"><h4>${esc(r[0])}</h4><span class="who">#${r[1]} · ${r[2]} games this fall${p?" · pitcher":""}</span>
+          <span class="tc-stats">${st.map(([k,v])=>`<div><b>${v}</b><span>${k}</span></div>`).join("")}</span>
+          <span class="blurb">${esc(AWARD[r[0]]||"")}${AWARD[r[0]]?" · season award":""}</span></span>
+      </span></button>`}).join("");
+}
+document.getElementById("cardgrid").addEventListener("click",e=>{const c=e.target.closest(".tc");if(!c)return;c.setAttribute("aria-pressed",c.getAttribute("aria-pressed")==="true"?"false":"true")});
+const CHANTS=["Buzz win!","Hustle. Heart. Buzz.","Let's go Buzz!","Double the hustle!","Bring the buzz!","Swing big, Buzz!"];
+let toastT=null;
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("on");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("on"),1800)}
+const calm=()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){return true}};
+function confetti(){if(calm())return;const c=document.getElementById("confetti");if(!c||!c.getContext)return;const x=c.getContext("2d");const W=c.width=innerWidth*devicePixelRatio,H=c.height=innerHeight*devicePixelRatio;
+  const cs=getComputedStyle(document.documentElement);const cols=[cs.getPropertyValue("--honey").trim()||"#E01A22","#FFFFFF","#0A0A0A"];
+  const ps=Array.from({length:140},()=>({x:W/2+(Math.random()-.5)*W*.3,y:H*.35,vx:(Math.random()-.5)*16*devicePixelRatio,vy:(-Math.random()*15-6)*devicePixelRatio,s:(5+Math.random()*7)*devicePixelRatio,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[Math.floor(Math.random()*3)]}));
+  let f=0;(function step(){x.clearRect(0,0,W,H);ps.forEach(p=>{p.vy+=.45*devicePixelRatio;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.fillStyle=p.c;x.strokeStyle="#000";x.lineWidth=devicePixelRatio;x.fillRect(-p.s/2,-p.s/3,p.s,p.s*.66);if(p.c==="#FFFFFF")x.strokeRect(-p.s/2,-p.s/3,p.s,p.s*.66);x.restore()});if(++f<130)requestAnimationFrame(step);else x.clearRect(0,0,W,H)})();}
+document.addEventListener("click",e=>{if(e.target.closest("[data-hype]")){toast(CHANTS[Math.floor(Math.random()*CHANTS.length)]);confetti()}});
+function celebrateWin(){const l=SEASON[SEASON.length-1];if(!l||l[2]!=="W")return;const k="buzz-cele-"+SEASON.length;let seen=false;try{seen=!!localStorage.getItem(k);localStorage.setItem(k,"1")}catch(e){}if(!seen)setTimeout(()=>{toast("Buzz win! "+l[3].replace("-","–")+" over "+l[1]);confetti()},700)}
+// ===== Dugout games =====
+const ROSTER=STATS.batting.rows.filter(r=>r[0]!=="Team").map(r=>({name:r[0],num:r[1]}));
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const bestGet=k=>{try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}};
+const bestSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+let game="memory";
+function showGame(){document.querySelectorAll("#gametabs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.g===game));document.querySelectorAll(".gpanel").forEach(p=>p.hidden=p.dataset.g!==game)}
+document.getElementById("gametabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;game=b.dataset.g;showGame()});
+
+// Card match
+const mem={cards:[],open:[],moves:0,matched:0,hard:false,lock:false};
+const memKey=()=>"buzz-mem-"+(mem.hard?"hard":"easy");
+function memFace(c){if(c.kind==="num")return `<span class="mf-num">#${c.p.num}</span><span class="mf-sub">Who is it?</span>`;if(c.kind==="name")return `<span class="mf-name">${esc(c.p.name)}</span><span class="mf-sub">Her number?</span>`;return `<span class="mf-num">${c.p.num}</span><span class="mf-name sm">${esc(c.p.name)}</span>`}
+function memNew(){const picks=shuffle(ROSTER).slice(0,8);const cards=[];picks.forEach((p,i)=>{cards.push({id:i,p,kind:mem.hard?"num":"both"});cards.push({id:i,p,kind:mem.hard?"name":"both"})});
+  mem.cards=shuffle(cards).map(c=>({...c,up:false,done:false}));mem.open=[];mem.moves=0;mem.matched=0;mem.lock=false;
+  document.getElementById("memgrid").innerHTML=mem.cards.map((c,i)=>`<button type="button" class="mc" data-i="${i}" aria-label="Hidden card"><span class="mc-back">B</span><span class="mc-face">${memFace(c)}</span></button>`).join("");memSync()}
+function memSync(){document.querySelectorAll("#memgrid .mc").forEach(b=>{const c=mem.cards[+b.dataset.i];b.classList.toggle("up",c.up||c.done);b.classList.toggle("done",c.done);b.disabled=c.done;b.setAttribute("aria-label",(c.up||c.done)?(c.kind==="num"?"Number "+c.p.num:c.kind==="name"?c.p.name:c.p.name+", number "+c.p.num):"Hidden card")});
+  const b=bestGet(memKey());document.getElementById("memstat").textContent=`Moves ${mem.moves} · Pairs ${mem.matched}/8${b!=null?" · Best "+b:""}`}
+document.getElementById("memgrid").addEventListener("click",e=>{const b=e.target.closest(".mc");if(!b||mem.lock)return;const c=mem.cards[+b.dataset.i];if(c.up||c.done)return;c.up=true;mem.open.push(c);
+  if(mem.open.length===2){mem.moves++;const [a,d]=mem.open;mem.open=[];
+    if(a.id===d.id){a.done=d.done=true;mem.matched++;memSync();if(mem.matched===8){const prev=bestGet(memKey());if(prev==null||mem.moves<prev)bestSet(memKey(),mem.moves);memSync();toast(prev==null||mem.moves<prev?"New best! "+mem.moves+" moves":"All matched in "+mem.moves+" moves");confetti()}}
+    else{mem.lock=true;memSync();setTimeout(()=>{a.up=d.up=false;mem.lock=false;memSync()},900)}return}
+  memSync()});
+document.getElementById("memnew").addEventListener("click",memNew);
+document.getElementById("memhard").addEventListener("click",e=>{mem.hard=!mem.hard;e.currentTarget.setAttribute("aria-pressed",mem.hard);memNew()});
+
+// Tic-tac-toe: Buzz vs Softball
+const BZ=`<svg viewBox="0 0 40 40" aria-hidden="true"><polygon points="10,4 30,4 39,20 30,36 10,36 1,20" fill="#E01A22" stroke="#000" stroke-width="2"/><text x="20" y="27" text-anchor="middle" font-family="Barlow Condensed, Impact, sans-serif" font-weight="900" font-style="italic" font-size="22" fill="#FFFFFF">B</text></svg>`;
+const SB=`<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#E9F25A" stroke="#000" stroke-width="2"/><path d="M9 8c6 7 6 17 0 24M31 8c-6 7-6 17 0 24" fill="none" stroke="#E01A22" stroke-width="2.2" stroke-dasharray="3 2"/></svg>`;
+const LINES=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+const ttt={b:Array(9).fill(""),turn:"B",first:"B",cpu:true,over:null,score:{B:0,S:0,T:0}};
+function tttWin(b){for(const l of LINES){const [a,c,d]=l;if(b[a]&&b[a]===b[c]&&b[a]===b[d])return {w:b[a],l}}return b.every(x=>x)?{w:"T",l:[]}:null}
+function tttCpuMove(){const b=ttt.b;const free=b.map((v,i)=>v?null:i).filter(i=>i!=null);
+  const tryFor=m=>{for(const i of free){const t=[...b];t[i]=m;const r=tttWin(t);if(r&&r.w===m)return i}return null};
+  let i=tryFor("S");if(i==null&&Math.random()<.75)i=tryFor("B");if(i==null&&!b[4]&&Math.random()<.7)i=4;
+  if(i==null){const pool=[0,2,6,8].filter(x=>!b[x]);i=(pool.length&&Math.random()<.6?pool:free)[Math.floor(Math.random()*(pool.length&&Math.random()<.6?pool.length:free.length))];if(i==null||b[i])i=free[Math.floor(Math.random()*free.length)]}
+  tttPlay(i)}
+function tttPlay(i){if(ttt.over||ttt.b[i])return;ttt.b[i]=ttt.turn;const r=tttWin(ttt.b);
+  if(r){ttt.over=r;ttt.score[r.w]++;if(r.w==="B"){toast(ttt.cpu?"Buzz wins!":"Buzz wins!");confetti()}else if(r.w==="S")toast(ttt.cpu?"Softball got you. Rematch?":"Softball wins!");else toast("Tie game. Extra innings?")}
+  else ttt.turn=ttt.turn==="B"?"S":"B";
+  tttRender();if(!ttt.over&&ttt.cpu&&ttt.turn==="S")setTimeout(tttCpuMove,450)}
+function tttRender(){const el=document.getElementById("tttgrid");const win=ttt.over?ttt.over.l:[];
+  el.innerHTML=ttt.b.map((v,i)=>`<button type="button" class="tc3 ${win.includes(i)?"win":""}" data-i="${i}" aria-label="${v==="B"?"Buzz":v==="S"?"Softball":"Empty square "+(i+1)}" ${v||ttt.over||(ttt.cpu&&ttt.turn==="S")?"disabled":""}>${v==="B"?BZ:v==="S"?SB:""}</button>`).join("");
+  const who=t=>t==="B"?"Buzz":"Softball";
+  document.getElementById("tttstat").textContent=ttt.over?(ttt.over.w==="T"?"Tie game":who(ttt.over.w)+" wins"):(ttt.cpu?(ttt.turn==="B"?"Your turn, Buzz":"Softball is thinking…"):who(ttt.turn)+"'s turn");
+  document.getElementById("tttscore").textContent=`Buzz ${ttt.score.B} · Softball ${ttt.score.S} · Ties ${ttt.score.T}${ttt.cpu?" · You're Buzz, the computer is Softball":" · Pass the phone back and forth"}`}
+function tttNew(){ttt.b=Array(9).fill("");ttt.over=null;ttt.first=ttt.first==="B"?"S":"B";if(ttt.cpu&&ttt.first==="S"&&ttt.score.B+ttt.score.S+ttt.score.T===0)ttt.first="B";ttt.turn=ttt.first;tttRender();if(ttt.cpu&&ttt.turn==="S")setTimeout(tttCpuMove,450)}
+document.getElementById("tttgrid").addEventListener("click",e=>{const b=e.target.closest(".tc3");if(!b||b.disabled)return;tttPlay(+b.dataset.i)});
+document.getElementById("tttnew").addEventListener("click",tttNew);
+document.getElementById("tttmode").addEventListener("click",e=>{ttt.cpu=!ttt.cpu;e.currentTarget.textContent=ttt.cpu?"vs Computer":"2 players";ttt.score={B:0,S:0,T:0};ttt.first="S";tttNew()});
+
+// Who's who? Questions come from the current stats, so they stay right as stats update.
+const quiz={qs:[],i:0,score:0,answered:false};
+function leader(rows,idx,min){const ok=rows.filter(r=>r[0]!=="Team"&&(min?min(r):true));let best=-Infinity,who=[];ok.forEach(r=>{const v=parseFloat(r[idx]);if(isNaN(v))return;if(v>best){best=v;who=[r[0]]}else if(v===best)who.push(r[0])});return who.length===1&&best>0?{name:who[0],v:best}:null}
+function quizBuild(){const B=STATS.batting.rows,P=STATS.pitching.rows;const qs=[];
+  const add=(q,a)=>{if(a)qs.push({q,a:a.name})};
+  add("Who leads the team in hits?",leader(B,9));add("Who leads the team in RBI?",leader(B,14));add("Who has scored the most runs?",leader(B,15));
+  add("Who has the most doubles?",leader(B,11));add("Who has the most stolen bases?",leader(B,19));add("Who has drawn the most walks?",leader(B,16));
+  add("Who has the team's best batting average? (10+ at-bats)",leader(B,5,r=>+r[4]>=10));add("Who has hit the most home runs this fall?",leader(B,13));
+  add("Who has pitched the most innings?",leader(P,2));add("Who has the most strikeouts pitching?",leader(P,11));
+  const facts=shuffle(qs).slice(0,6);
+  const nums=shuffle(ROSTER).slice(0,3).map(p=>({q:`Who wears #${p.num}?`,a:p.name}));
+  const aw=shuffle(Object.entries(AWARD)).slice(0,1).map(([n,a])=>({q:`Whose season award is "${a}"?`,a:n}));
+  return shuffle([...facts,...nums,...aw]).slice(0,10).map(x=>({...x,opts:shuffle([x.a,...shuffle(ROSTER.map(p=>p.name).filter(n=>n!==x.a)).slice(0,3)])}));}
+function quizNew(){quiz.qs=quizBuild();quiz.i=0;quiz.score=0;quiz.answered=false;quizRender()}
+function quizRender(){const box=document.getElementById("quizbox");const n=quiz.qs.length;const b=bestGet("buzz-quiz");
+  if(quiz.i>=n){box.innerHTML=`<div class="q">You got ${quiz.score} of ${n}!</div><p class="fb">${quiz.score===n?"Perfect. You know this team.":quiz.score>=7?"Big-time Buzz fan.":"Check the trading cards and try again."}</p><button type="button" class="btn swing" id="quizagain">Play again</button>`;
+    document.getElementById("quizstat").textContent="Final"+(b!=null?" · Best "+b+"/"+n:"");return}
+  const q=quiz.qs[quiz.i];
+  box.innerHTML=`<div class="q">${esc(q.q)}</div><div class="opts">${q.opts.map(o=>`<button type="button" data-o="${esc(o)}">${esc(o)}</button>`).join("")}</div><div class="fb" id="quizfb"></div>`;
+  document.getElementById("quizstat").textContent=`Question ${quiz.i+1} of ${n} · Score ${quiz.score}${b!=null?" · Best "+b:""}`}
+document.getElementById("quizbox").addEventListener("click",e=>{if(e.target.id==="quizagain"){quizNew();return}
+  const btn=e.target.closest("[data-o]");if(!btn||quiz.answered)return;quiz.answered=true;const q=quiz.qs[quiz.i];const ok=btn.dataset.o===q.a;if(ok)quiz.score++;
+  document.querySelectorAll("#quizbox [data-o]").forEach(x=>{if(x.dataset.o===q.a)x.classList.add("right");else if(x===btn)x.classList.add("wrong");x.disabled=true});
+  document.getElementById("quizfb").textContent=ok?"Yes! "+q.a+".":"It's "+q.a+".";
+  setTimeout(()=>{quiz.i++;quiz.answered=false;if(quiz.i>=quiz.qs.length){const prev=bestGet("buzz-quiz");if(prev==null||quiz.score>prev)bestSet("buzz-quiz",quiz.score);if(quiz.score>=8)confetti()}quizRender()},1100)});
+document.getElementById("quiznew").addEventListener("click",quizNew);
+
+// Batting cage: timing game
+const cage={left:0,bases:0,hits:0,p:null,raf:0,busy:false};
+const CAGE_START=8,CAGE_END=100,PLATE=88;
+function cageStat(){const b=bestGet("buzz-cage");document.getElementById("cagestat").textContent=`${cage.on?"Pitch "+(10-cage.left)+"/10 · ":"Ten pitches · "}Bases ${cage.bases}${b!=null?" · Best "+b:""}`}
+function cageMsg(t,small){const m=document.getElementById("cagemsg");m.textContent=t;m.classList.toggle("small",!!small)}
+function cageNew(){cancelAnimationFrame(cage.raf);cage.on=true;cage.left=10;cage.bases=0;cage.hits=0;cage.p=null;cageStat();cageMsg("Here comes the pitch…");setTimeout(cagePitch,700)}
+function cagePitch(){if(cage.left<=0)return cageEnd();cage.left--;const dur=650+Math.random()*650;const t0=performance.now()+300+Math.random()*700;
+  const tPlate=t0+dur*((PLATE-CAGE_START)/(CAGE_END-CAGE_START));cage.p={t0,dur,tPlate,swung:false};cageStat();
+  const ball=document.getElementById("ball");ball.style.opacity="0";
+  const step=now=>{const p=cage.p;if(!p)return;const k=(now-p.t0)/p.dur;if(k<0){cage.raf=requestAnimationFrame(step);return}
+    ball.style.opacity="1";ball.style.left=(CAGE_START+(CAGE_END-CAGE_START)*Math.min(1,k))+"%";
+    if(k>=1){if(!p.swung){cageResult(null)}return}cage.raf=requestAnimationFrame(step)};
+  cage.raf=requestAnimationFrame(step)}
+function cageSwing(){const p=cage.p;if(!p||p.swung||performance.now()<p.t0)return;p.swung=true;cageResult(Math.abs(performance.now()-p.tPlate))}
+function cageResult(err){cancelAnimationFrame(cage.raf);const ball=document.getElementById("ball");
+  let r;if(err==null)r=["Strike looking",0];else if(err<40)r=["Home run!",4];else if(err<85)r=["Triple!",3];else if(err<140)r=["Double!",2];else if(err<210)r=["Base hit!",1];else r=[Math.random()<.5?"Swing and a miss":"Foul ball",0];
+  cage.bases+=r[1];if(r[1])cage.hits++;cageMsg(r[0]);if(r[1]===4){ball.style.opacity="0";confetti()}else setTimeout(()=>{ball.style.opacity="0"},250);
+  cage.p=null;cageStat();setTimeout(()=>cage.left>0?cagePitch():cageEnd(),1100)}
+function cageEnd(){const prev=bestGet("buzz-cage");const nb=prev==null||cage.bases>prev;if(nb)bestSet("buzz-cage",cage.bases);cageStat();
+  cageMsg(`${cage.hits} hits, ${cage.bases} total bases${nb&&cage.bases>0?". New best!":""}`);if(nb&&cage.bases>0){toast("New best: "+cage.bases+" bases");confetti()}}
+document.getElementById("cagenew").addEventListener("click",cageNew);
+document.getElementById("swing").addEventListener("click",cageSwing);
+document.getElementById("cage").addEventListener("pointerdown",cageSwing);
+
+function renderGames(){showGame();memNew();tttRender();tttRender();quizNew();cageStat()}
+function renderAll(){renderSeedPick();renderBoard();renderRoad();renderBracket();renderTimeline();renderLeaders();renderStats();renderSeason()}
+
+document.getElementById("bracket").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");if(!b)return;const k=b.dataset.g;if(picks[k]===b.dataset.pick)delete picks[k];else picks[k]=b.dataset.pick;save();renderRoad();renderBracket()});
+document.getElementById("divtabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;view=b.dataset.v;renderBracket()});
+document.getElementById("seedpick").addEventListener("click",e=>{const b=e.target.closest("button[data-seed]");if(!b)return;ETTA=b.dataset.seed||null;try{if(ETTA)localStorage.setItem("buzz-seed-1017",ETTA);else localStorage.removeItem("buzz-seed-1017")}catch(_){ }view=OURDIV();if(!ETTA&&filter==="mine")filter="all";renderAll()});
+document.getElementById("reset").addEventListener("click",()=>{picks={};save();renderRoad();renderBracket()});
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filter=b.dataset.f;try{localStorage.setItem("buzz-filter-1017",filter)}catch(_){ }renderTimeline()});
+renderAll();renderCards();renderGames();renderSpot();tickCount();setInterval(tickCount,30000);celebrateWin();
+</script>
+
+<script>
+/* Live bracket sync: a GitHub Action reads the tournament bracket every 10 minutes and
+   commits data/live.json. This pulls it every 2 minutes and re-renders when a score changes. */
+(function(){
+  const URL="https://raw.githubusercontent.com/Litbroboy/parsons-10u/main/data/live.json";
+  let last="";
+  function addToSeason(g){
+    const [a,h]=teams(g,{}); if(a!==ETTA&&h!==ETTA)return;
+    const us=a===ETTA?g.as:g.hs, them=a===ETTA?g.hs:g.as, opp=a===ETTA?h:a, w=us>them;
+    const d=g.d==="Sat"?"Oct 17":"Oct 18";
+    SEASON.push([d,opp,w?"W":"L",us+"-"+them]); g.s=1;
+    const rec=document.querySelector(".rec .num"); if(rec){const m=rec.textContent.match(/(\d+)\D+(\d+)/); if(m){rec.textContent=(+m[1]+(w?1:0))+"\u2013"+(+m[2]+(w?0:1))}}
+    if(w){try{toast("Buzz win! "+us+"\u2013"+them+" over "+opp);confetti()}catch(e){}}
+  }
+  async function pull(){
+    try{
+      const r=await fetch(URL+"?t="+Date.now(),{cache:"no-store"}); if(!r.ok)return;
+      const j=await r.json(); const sig=JSON.stringify(j.results||{});
+      const st=document.getElementById("liveStamp");
+      if(st&&j.updated)st.textContent="Bracket scores update by themselves. Last new score: "+new Date(j.updated).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+".";
+      if(sig===last)return; last=sig; let changed=false;
+      for(const [v,res] of Object.entries(j.results||{}))for(const [n,sc] of Object.entries(res)){
+        const g=GAMES.find(x=>x.v===v&&String(x.n)===String(n));
+        if(g&&(g.as!==sc[0]||g.hs!==sc[1])){g.as=sc[0];g.hs=sc[1];changed=true;if(!g.s)addToSeason(g)}
+      }
+      if(changed){renderAll();renderSpot();tickCount()}
+    }catch(e){}
+  }
+  pull(); setInterval(pull,120000);
+  document.addEventListener("visibilitychange",()=>{if(!document.hidden)pull()});
+})();
+</script>
+</body>
+</html>
