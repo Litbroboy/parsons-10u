@@ -1,8 +1,10 @@
 name: Sync bracket scores
 
+# Turned off between tournaments. To turn it back on for a new tournament,
+# update data/config.json and put the schedule back:
+#   schedule:
+#     - cron: "*/10 * * * *"
 on:
-  schedule:
-    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:
