@@ -1,43 +1,29 @@
 {
- "updated": "2026-10-18T21:20:32.276Z",
+ "updated": "2026-10-31T13:43:06.304Z",
+ "tournament": "fright-night-2026",
  "results": {
-  "S": {
-   "1": [
-    1,
-    10
-   ],
-   "2": [
-    12,
-    0
-   ],
-   "3": [
-    9,
-    10
-   ],
-   "4": [
-    11,
-    10
-   ],
-   "5": [
-    4,
-    6
-   ],
-   "6": [
-    8,
-    0
-   ],
-   "7": [
-    3,
-    9
-   ],
-   "8": [
-    5,
-    6
-   ],
-   "9": [
-    4,
-    6
-   ]
+  "S": {}
+ },
+ "names": {
+  "S": [
+   "Team 1",
+   "Team 2",
+   "Team 3",
+   "Team 4",
+   "Team 5",
+   "Team 6"
+  ]
+ },
+ "pool": [
+  {
+   "opp": "CenTex Natives 10U",
+   "us": null,
+   "them": null
+  },
+  {
+   "opp": "NTX Dynamite Softball",
+   "us": null,
+   "them": null
   }
- }
+ ]
 }
