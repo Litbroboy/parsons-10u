@@ -1,19 +1,14 @@
 import fs from "node:fs";
-const UA={headers:{"user-agent":"Mozilla/5.0 (parsons-10u probe)"}};
+const UA={headers:{"user-agent":"Mozilla/5.0 (parsons-10u probe)","x-requested-with":"XMLHttpRequest"}};
+fs.rmSync("probe/out",{recursive:true,force:true}); fs.mkdirSync("probe/out",{recursive:true});
 const save=(n,t)=>fs.writeFileSync("probe/out/"+n,t);
-fs.mkdirSync("probe/out",{recursive:true});
-async function get(u){try{const r=await fetch(u,UA);const t=await r.text();return [r.status,t]}catch(e){return [0,String(e)]}}
-const [s1,home]=await get("https://www.parsonssportsranch.com/"); save("home.html",home);
-const [s2,br]=await get("https://www.parsonssportsranch.com/tournament-brackets/"); save("brackets.html",br);
-const ids=[...new Set([...br.matchAll(/brackethq\.com\/b\/([a-z0-9]+)/gi)].map(m=>m[1]))];
-const log=[`home ${s1}`,`brackets ${s2} ids ${ids.join(",")}`];
+async function get(u){try{const r=await fetch(u,UA);return [r.status,await r.text()]}catch(e){return [0,String(e)]}}
+const log=[];
+const LA="https://parsonssportsranch.leagueapps.com/ajax/loadSchedule?origin=site&scope=program&itemType=games_events&programId=5012673";
+for(const [n,q] of [["div",`&divisionId=5012678`],["team",`&teamId=8054042`],["divpub",`&publishedOnly=true&divisionId=5012678`]]){const [s,t]=await get(LA+q); save(`la-${n}.html`,t); log.push(`la ${n} ${s} ${t.length}`)}
+for(const f of ["interior.js","tournaments-data.js","script.js"]){const [s,t]=await get("https://www.parsonssportsranch.com/"+f); save(f,t); log.push(`${f} ${s} ${t.length}`)}
+const js=fs.readFileSync("probe/out/interior.js","utf8");
+const ids=[...new Set([...js.matchAll(/brackethq\.com\/b\/([a-z0-9]+)/gi)].map(m=>m[1]))];
+log.push("bhq ids "+ids.join(","));
 for(const id of ids){const [s,t]=await get(`https://brackethq.com/b/${id}/`); save(`bhq-${id}.html`,t); log.push(`bhq ${id} ${s} ${t.length}`)}
-const la=[...new Set([...home.matchAll(/leagueapps\.com\/tournaments\/(\d+)/g)].map(m=>m[1]))];
-log.push("la ids "+la.join(","));
-for(const id of [...new Set([...la,"5012673"])]){
-  for(const page of ["schedule","standings"]){
-    const [s,t]=await get(`https://parsonssportsranch.leagueapps.com/tournaments/${id}/${page}?ngmp_2023_iframe_transition=1`);
-    save(`la-${id}-${page}.html`,t); log.push(`la ${id} ${page} ${s} ${t.length}`);
-  }
-}
 save("log.txt",log.join("\n"));
