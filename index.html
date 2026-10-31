@@ -653,7 +653,7 @@ const SEED=(v,n)=>DIV[v].short+" #"+n;
 // the bracket's times and fields from the ranch's BracketHQ bracket (qfmrd). Seeds become team
 // names once the ranch fills in the bracket after pool play.
 const POOL=[
- {o:"CenTex Natives 10U",d:"Sat",t:"9:10 AM",f:"Sue Parsons Field",as:15,hs:1},
+ {o:"CenTex Natives 10U",d:"Sat",t:"9:10 AM",f:"Sue Parsons Field",as:15,hs:1,gc:1},
  {o:"NTX Dynamite Softball",d:"Sat",t:"11:30 AM",f:"Sue Parsons Field"}];
 const S_=n=>SEED("S",n);
 const GAMES=[
@@ -836,7 +836,7 @@ function poolRow(p){
   const fin=p.as!=null;
   const t=(n,sc,o)=>`<div class="t ${fin?(sc>o?"win":"lose"):""}"><span>${esc(n)}</span>${fin?`<span class="s">${sc}</span>`:""}</div>`;
   return `<div class="row mine"><div class="row-time">${esc(p.t)}</div><div class="row-teams">${t(ETTA_LABEL,p.as,p.hs)}${t(p.o,p.hs,p.as)}</div>
-    <div class="row-meta"><span><span class="chip">Pool play</span></span><span>${esc(p.f)}</span></div>${fin?"":`<div class="row-foot">${watchLinks({f:p.f,n:"pool"},true)}</div>`}</div>`;
+    <div class="row-meta"><span><span class="chip">Pool play</span></span><span>${esc(p.f)}</span></div>${p.ranch?`<div class="row-foot"><span class="warn">Our scorebook has this one ${p.as}–${p.hs}. The ranch posted it as ${esc(p.ranch)}.</span></div>`:""}${fin?"":`<div class="row-foot">${watchLinks({f:p.f,n:"pool"},true)}</div>`}</div>`;
 }
 function row({g,a,h}){
   const fin=g.as!=null; const mine=a===ETTA||h===ETTA;
@@ -1184,6 +1184,8 @@ renderAll();renderCards();renderGames();renderSpot();tickCount();setInterval(tic
       // Pool play scores from LeagueApps
       for(const g of j.pool||[]){
         const p=POOL.find(x=>x.o===g.opp); if(!p||g.us==null)continue;
+        // A score already taken from our GameChanger scorebook stays; note the ranch's if it differs
+        if(p.gc){const rs=g.us+"–"+g.them; if((p.as!==g.us||p.hs!==g.them)&&p.ranch!==rs){p.ranch=rs;changed=true} continue}
         if(p.as!==g.us||p.hs!==g.them){const first=p.as==null;p.as=g.us;p.hs=g.them;changed=true;if(first)addResult(p.d,p.o,p.as,p.hs)}
       }
       // Seeds -> team names, once the ranch fills in the bracket
