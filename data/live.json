@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T13:43:06.304Z",
+ "updated": "2026-10-31T15:32:45.551Z",
  "tournament": "fright-night-2026",
  "results": {
   "S": {}
@@ -17,8 +17,8 @@
  "pool": [
   {
    "opp": "CenTex Natives 10U",
-   "us": null,
-   "them": null
+   "us": 11,
+   "them": 0
   },
   {
    "opp": "NTX Dynamite Softball",
