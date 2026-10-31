@@ -1,17 +1,26 @@
 {
- "updated": "2026-10-31T17:52:17.036Z",
+ "updated": "2026-10-31T21:03:31.121Z",
  "tournament": "fright-night-2026",
  "results": {
-  "S": {}
+  "S": {
+   "1": [
+    4,
+    12
+   ],
+   "5": [
+    10,
+    0
+   ]
+  }
  },
  "names": {
   "S": [
-   "Team 1",
-   "Team 2",
-   "Team 3",
-   "Team 4",
-   "Team 5",
-   "Team 6"
+   "Buzz Elite",
+   "Buzz Premier",
+   "TX Prospects",
+   "NTX Dynamite",
+   "Centex Native",
+   "FC Premier"
   ]
  },
  "pool": [
