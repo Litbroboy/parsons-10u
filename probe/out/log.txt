@@ -1,0 +1,5 @@
+home 200
+brackets 200 ids 
+la ids 
+la 5012673 schedule 200 84090
+la 5012673 standings 200 65690
