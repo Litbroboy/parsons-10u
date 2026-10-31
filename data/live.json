@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-31T15:32:45.551Z",
+ "updated": "2026-10-31T17:52:17.036Z",
  "tournament": "fright-night-2026",
  "results": {
   "S": {}
@@ -22,8 +22,8 @@
   },
   {
    "opp": "NTX Dynamite Softball",
-   "us": null,
-   "them": null
+   "us": 7,
+   "them": 0
   }
  ]
 }
