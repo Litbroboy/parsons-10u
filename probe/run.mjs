@@ -1,14 +1,8 @@
 import fs from "node:fs";
-const UA={headers:{"user-agent":"Mozilla/5.0 (parsons-10u probe)"}};
 fs.rmSync("probe/out",{recursive:true,force:true}); fs.mkdirSync("probe/out",{recursive:true});
-const save=(n,t)=>fs.writeFileSync("probe/out/"+n,t);
-async function get(u){try{const r=await fetch(u,UA);return [r.status,await r.text()]}catch(e){return [0,String(e)]}}
 const log=[];
-const E="https://playncs.com/fastpitch/Events";
-const slug="13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points";
-for(const [n,u] of [["sched",`${E}/Schedule/${slug}?division=10U%20C`],["details",`${E}/Details/${slug}`],["bhq",`https://brackethq.com/b/qfmrd/`]]){const [s,t]=await get(u); save(n+".html",t); log.push(`${n} ${s} ${t.length}`)}
-const sched=fs.readFileSync("probe/out/sched.html","utf8");
-const links=[...new Set([...sched.matchAll(/href="([^"]*(?:[Bb]racket|Standings|Pool)[^"]*)"/g)].map(m=>m[1]))];
-log.push("links: "+links.join(" "));
-let k=0; for(const l of links.slice(0,8)){const u=l.startsWith("http")?l:"https://playncs.com"+l; const [s,t]=await get(u); save(`link${k}.html`,t); log.push(`link${k} ${s} ${t.length} ${u}`); k++}
-save("log.txt",log.join("\n"));
+for(const [n,u,h] of [["bhq","https://brackethq.com/b/qfmrd/",{"user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"}],
+  ["ncsb","https://playncs.com/fastpitch/Events/Bracket/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C",{}]]){
+  try{const r=await fetch(u,{headers:h}); const t=await r.text(); fs.writeFileSync("probe/out/"+n+".html",t); log.push(`${n} ${r.status} ${t.length}`)}catch(e){log.push(`${n} ERR ${e.message} ${e.cause&&e.cause.code}`)}
+}
+fs.writeFileSync("probe/out/log.txt",log.join("\n"));
