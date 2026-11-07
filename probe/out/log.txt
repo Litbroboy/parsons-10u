@@ -1,6 +1,2 @@
-sched 200 68800
-details 200 48725
-bhq 0 23
-links: /fastpitch/Events/Standings/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C /fastpitch/Events/Bracket/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C
-link0 200 42159 https://playncs.com/fastpitch/Events/Standings/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C
-link1 200 162219 https://playncs.com/fastpitch/Events/Bracket/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C
+bhq 200 38968
+ncsb 200 162219
