@@ -445,7 +445,7 @@ h2{font-size:34px;line-height:1}
       <h1><span class="mb">Buzz</span><span class="mw">Parsons 10U</span></h1>
       <p class="mast-tag">Softball <i>/</i> Hustle <i>/</i> Heart</p>
       <div class="mast-line">
-        <span class="rec"><span class="num">24–4</span> this fall</span>
+        <span class="rec"><span class="num">27–4</span> this fall</span>
         <span>Centex Buzz Fastpitch</span>
         <span>Home field: Parsons Sports Ranch</span>
         <a class="tag" href="https://www.instagram.com/buzzeliteparsons10u/" target="_blank" rel="noopener">#buzzwin</a>
@@ -456,14 +456,14 @@ h2{font-size:34px;line-height:1}
 
   <section>
     <div class="board" id="board" aria-live="polite"></div>
-    <p class="tour"><b>Fright Night at the Ranch</b>, Parsons Sports Ranch, Oct 31–Nov 1. Pool play Saturday went 2–0 (15–1 over CenTex Natives, 7–0 over NTX Dynamite), which made us the <b>#1 seed</b>; the bracket calls us <b>Buzz Elite</b>. Then 10–0 over NTX Dynamite in the semifinal. Next up is the winners final against Buzz Premier. Two wins from the title.</p>
+    <p class="tour"><b>NCS Texas State Championships</b>, Valley Ridge Park, Cedar Hill, Nov 7–8. Five-game guarantee. Pool play went 2–0 (3–1 over Dream Team 2k16, 12–0 over Empowered Athletics 10U) and put us first in the 10U standings, the <b>#1 seed in the 10U Diamond bracket</b>. Times and fields are NCS's; check with the coach at the park.</p>
     <div class="seedpick" id="seedpick" hidden></div>
   </section>
 
-  <section aria-labelledby="watch-h">
+  <section aria-labelledby="watch-h" id="watchsec" hidden>
     <div class="sec-head"><h2 id="watch-h">Watch live</h2><p>On Parsons Sports Network. Needs a free account.</p></div>
     <div class="cams">
-      <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=sueParsonsField" target="_blank" rel="noopener"><b>Sue Parsons Field</b><span>Both pool games, and most bracket games</span></a>
+      <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=sueParsonsField" target="_blank" rel="noopener"><b>Sue Parsons Field</b><span>Pool play and bracket</span></a>
       <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=parkersField" target="_blank" rel="noopener"><b>Parker's Field</b><span>Live when the ranch is broadcasting</span></a>
       <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=remisField" target="_blank" rel="noopener"><b>Remi's Field</b><span>Live when the ranch is broadcasting</span></a>
       <a class="cam" href="https://www.parsonssportsnetwork.com/watch-live/?field=parsonsField" target="_blank" rel="noopener"><b>Parsons Field</b><span>Live when the ranch is broadcasting</span></a>
@@ -480,7 +480,7 @@ h2{font-size:34px;line-height:1}
   <section aria-labelledby="bk-h">
     <div class="sec-head"><h2 id="bk-h">Our bracket</h2>
       <div class="tabs" id="divtabs">
-        <button type="button" data-v="S" aria-pressed="true">10U softball<small>6 teams, double elimination</small></button>
+        <button type="button" data-v="S" aria-pressed="true">10U Diamond<small>Top 6 after pool play, 5-game guarantee</small></button>
       </div>
     </div>
     <div class="bk-tools"><span>Tap a team in an unplayed game to pick a winner and see where it leads. Scroll sideways for later rounds.</span><button type="button" class="ghost-btn" id="reset">Clear picks</button></div>
@@ -641,54 +641,57 @@ h2{font-size:34px;line-height:1}
 <script>
 let ETTA=null; const ETTA_LABEL="Buzz Parsons (us)";
 let NAMES={}, AUTO_SEED=false; // seed -> team name, filled from the bracket once the ranch posts it
-try{ETTA=localStorage.getItem("buzz-seed-1031")||null}catch(e){}
+try{ETTA=localStorage.getItem("buzz-seed-1107")||null}catch(e){}
 const WATCH="https://www.parsonssportsnetwork.com/watch-live/";
 const CAMS={"Sue Parsons Field":"sueParsonsField","Parker's Field":"parkersField","Remi's Field":"remisField","Parsons Field":"parsonsField"};
 const watchUrl=f=>CAMS[f]?WATCH+"?field="+CAMS[f]:null;
 const GC="https://web.gc.com/teams/XR8ChK0ezvRX/2026-fall-buzz-10u-parsons-10u";
-const DIV={S:{name:"10U softball",short:"10U",chip:""}};
+const DIV={S:{name:"10U Diamond",short:"Diamond",chip:""}};
 const W=n=>({w:n}), L=n=>({l:n});
 const SEED=(v,n)=>DIV[v].short+" #"+n;
-// Fright Night at the Ranch, Oct 31-Nov 1. Pool play from the ranch's LeagueApps schedule;
-// the bracket's times and fields from the ranch's BracketHQ bracket (qfmrd). Seeds become team
-// names once the ranch fills in the bracket after pool play.
+// NCS Texas State Championships, Valley Ridge Park, Cedar Hill, Nov 7-8 (event 13662, 10U C).
+// Pool play from the NCS schedule. The 10U Diamond bracket (top 6 after pool play) from the NCS
+// bracket page: a 5-game-guarantee double elimination where the first losers-bracket loss is not
+// the end (losers of games 5 and 6 play again in games 8 and 7), and game 12 is the only final.
 const POOL=[
- {o:"CenTex Natives 10U",d:"Sat",t:"9:10 AM",f:"Sue Parsons Field",as:15,hs:1,gc:1},
- {o:"NTX Dynamite Softball",d:"Sat",t:"11:30 AM",f:"Sue Parsons Field",as:7,hs:0,gc:1}];
+ {o:"Dream Team 2k16",d:"Sat",t:"10:30 AM",f:"Valley Ridge Park B",as:3,hs:1,gc:1},
+ {o:"Empowered Athletics 10U",d:"Sat",t:"12:00 PM",f:"Valley Ridge Park B",as:12,hs:0,gc:1}];
 const S_=n=>SEED("S",n);
+const VR=x=>"Valley Ridge Park "+x;
 const GAMES=[
- {v:"S",n:1,b:"W",d:"Sat",t:"12:40 PM",f:"Sue Parsons Field",a:S_(5),h:S_(4),as:4,hs:12},
- {v:"S",n:5,b:"W",d:"Sat",t:"1:50 PM",f:"Sue Parsons Field",a:S_(1),h:W(1),as:10,hs:0,s:1},
- {v:"S",n:2,b:"W",d:"Sun",t:"9:00 AM",f:"Parsons Field",a:S_(3),h:S_(6),as:18,hs:1},
- {v:"S",n:4,b:"L",d:"Sun",t:"10:15 AM",f:"Parsons Field",a:L(5),h:L(2),place:"tied 5th",as:8,hs:2},
- {v:"S",n:6,b:"W",d:"Sun",t:"11:30 AM",f:"Parsons Field",a:W(2),h:S_(2),as:4,hs:5},
- {v:"S",n:3,b:"L",d:"Sun",t:"1:30 PM",f:"Sue Parsons Field",a:L(6),h:L(1),place:"tied 5th",as:17,hs:0},
- {v:"S",n:8,b:"W",d:"Sun",t:"2:45 PM",f:"Sue Parsons Field",a:W(5),h:W(6)},
- {v:"S",n:7,b:"L",d:"Sun",t:"4:00 PM",f:"Sue Parsons Field",a:W(3),h:W(4),place:"4th"},
- {v:"S",n:9,b:"L",d:"Sun",t:"5:15 PM",f:"Sue Parsons Field",a:L(8),h:W(7),place:"3rd"},
- {v:"S",n:10,b:"F",d:"Sun",t:"6:30 PM",f:"Sue Parsons Field",a:W(8),h:W(9)},
- {v:"S",n:11,b:"F2",d:"Sun",t:"",f:"Sue Parsons Field",of:10,flag:"Only if the losers-bracket team wins game 10. Time not posted yet."},
+ {v:"S",n:1,b:"W",d:"Sat",t:"4:30 PM",f:VR("A"),a:S_(4),h:S_(5)},
+ {v:"S",n:2,b:"W",d:"Sat",t:"4:30 PM",f:VR("C"),a:S_(3),h:S_(6)},
+ {v:"S",n:3,b:"W",d:"Sat",t:"6:00 PM",f:VR("A"),a:S_(1),h:W(1)},
+ {v:"S",n:4,b:"W",d:"Sat",t:"7:30 PM",f:VR("A"),a:W(2),h:S_(2)},
+ {v:"S",n:5,b:"L",d:"Sun",t:"9:00 AM",f:VR("A"),a:L(2),h:L(3)},
+ {v:"S",n:6,b:"L",d:"Sun",t:"9:00 AM",f:VR("C"),a:L(1),h:L(4)},
+ {v:"S",n:7,b:"L",d:"Sun",t:"10:30 AM",f:VR("A"),a:W(5),h:L(6),place:"tied 5th"},
+ {v:"S",n:8,b:"L",d:"Sun",t:"12:00 PM",f:VR("A"),a:L(5),h:W(6),place:"tied 5th"},
+ {v:"S",n:9,b:"W",d:"Sun",t:"12:00 PM",f:VR("C"),a:W(3),h:W(4)},
+ {v:"S",n:10,b:"L",d:"Sun",t:"1:30 PM",f:VR("A"),a:W(7),h:W(8),place:"4th"},
+ {v:"S",n:11,b:"L",d:"Sun",t:"3:00 PM",f:VR("A"),a:L(9),h:W(10),place:"3rd"},
+ {v:"S",n:12,b:"F",d:"Sun",t:"4:30 PM",f:VR("A"),a:W(9),h:W(11)},
 ];
-// Seeds after pool play, as the ranch's bracket lists them
-NAMES={[S_(1)]:"Buzz Elite",[S_(2)]:"Buzz Premier",[S_(3)]:"TX Prospects",[S_(4)]:"NTX Dynamite",[S_(5)]:"Centex Native",[S_(6)]:"FC Premier"};
+// We finished pool play first in the 10U standings: the Diamond bracket's #1 seed.
+NAMES={[S_(1)]:"Buzz Parsons Elite"};
 ETTA=S_(1); AUTO_SEED=true;
 const LAYOUT={
- S:{w:[["Round 1",[1,2]],["Semifinals",[5,6]],["Winners final",[8]]],l:[["Losers 1",[3,4]],["Losers 2",[7]],["Losers final",[9]]],f:[["Championship",[10]],["If needed",[11]]]}
+ S:{w:[["Round 1",[1,2]],["Semifinals",[3,4]],["Winners final",[9]]],l:[["Losers 1",[5,6]],["Losers 2",[7,8]],["Losers 3",[10]],["Losers final",[11]]],f:[["Championship",[12]]]}
 };
 const BUZZ=[];
-const SEASON=[["Aug 29","Waco Wood Ducks","W","7-0"],["Aug 29","Storm 10U Blue","W","5-3"],["Aug 30","Buzz Bold 9U","W","6-2"],["Aug 30","Waco Wood Ducks","W","2-1"],["Aug 30","Waco Wood Ducks","W","1-0"],["Sep 13","TX Chaos","W","8-0"],["Sep 13","RobCo Rowdies","W","9-0"],["Sep 13","TX Chaos","W","8-4"],["Sep 13","RobCo Rowdies","W","10-1"],["Sep 26","PC Havoc 9U","W","11-0"],["Sep 26","Pink Sox","W","7-1"],["Sep 27","PC Havoc 9U","W","9-0"],["Sep 27","Pink Sox","W","9-1"],["Sep 27","Pink Sox","W","6-1"],["Oct 10","Texas Twisters","L","1-3"],["Oct 10","Hotshots Velazquez","W","4-1"],["Oct 10","Texas Twisters","L","2-3"],["Oct 11","NL Bandits","W","8-4"],["Oct 11","Hotshots Velasquez","L","1-3"],["Oct 17","Texas Belles 2k16","L","1-7"],["Oct 17","Texas Trailblazers","W","7-6"],["Oct 17","Waco Warriors","W","13-0"],["Oct 18","Magic FP","W","8-0"],["Oct 18","Texas Trailblazers","W","6-5"],["Oct 18","GTX Crush","W","4-0"],["Oct 31","CenTex Natives 10U","W","15-1"],["Oct 31","NTX Dynamite Softball","W","7-0"],["Oct 31","NTX Dynamite","W","10-0"]];
+const SEASON=[["Aug 29","Waco Wood Ducks","W","7-0"],["Aug 29","Storm 10U Blue","W","5-3"],["Aug 30","Buzz Bold 9U","W","6-2"],["Aug 30","Waco Wood Ducks","W","2-1"],["Aug 30","Waco Wood Ducks","W","1-0"],["Sep 13","TX Chaos","W","8-0"],["Sep 13","RobCo Rowdies","W","9-0"],["Sep 13","TX Chaos","W","8-4"],["Sep 13","RobCo Rowdies","W","10-1"],["Sep 26","PC Havoc 9U","W","11-0"],["Sep 26","Pink Sox","W","7-1"],["Sep 27","PC Havoc 9U","W","9-0"],["Sep 27","Pink Sox","W","9-1"],["Sep 27","Pink Sox","W","6-1"],["Oct 10","Texas Twisters","L","1-3"],["Oct 10","Hotshots Velazquez","W","4-1"],["Oct 10","Texas Twisters","L","2-3"],["Oct 11","NL Bandits","W","8-4"],["Oct 11","Hotshots Velasquez","L","1-3"],["Oct 17","Texas Belles 2k16","L","1-7"],["Oct 17","Texas Trailblazers","W","7-6"],["Oct 17","Waco Warriors","W","13-0"],["Oct 18","Magic FP","W","8-0"],["Oct 18","Texas Trailblazers","W","6-5"],["Oct 18","GTX Crush","W","4-0"],["Oct 31","CenTex Natives 10U","W","15-1"],["Oct 31","NTX Dynamite Softball","W","7-0"],["Oct 31","NTX Dynamite","W","10-0"],["Nov 1","Buzz Premier","W","7-1"],["Nov 7","Dream Team 2k16","W","3-1"],["Nov 7","Empowered Athletics 10U","W","12-0"]];
 const DAYN={Sat:0,Sun:1};
 const sortKey=g=>DAYN[g.d]*2000+mins(g.t);
-function todayKey(){const d=new Date().toLocaleDateString("en-US",{timeZone:"America/Chicago",month:"numeric",day:"numeric"});return d==="10/31"?"Sat":d==="11/1"?"Sun":null}
+function todayKey(){const d=new Date().toLocaleDateString("en-US",{timeZone:"America/Chicago",month:"numeric",day:"numeric"});return d==="11/7"?"Sat":d==="11/8"?"Sun":null}
 const G=(v,n)=>GAMES.find(g=>g.v===v&&g.n===n);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const mins=t=>{if(!t)return -1;const m=t.match(/(\d+):(\d+) (AM|PM)/);return (m[1]%12+(m[3]==="PM"?12:0))*60+ +m[2]};
 const nm=n=>n===ETTA?ETTA_LABEL:(NAMES[n]||n);
-let picks={}; try{picks=JSON.parse(localStorage.getItem("buzz-picks-1031")||"{}")}catch(e){picks={}}
+let picks={}; try{picks=JSON.parse(localStorage.getItem("buzz-picks-1107")||"{}")}catch(e){picks={}}
 let view="S", filter="all";
-try{filter=localStorage.getItem("buzz-filter-1031")||"all"}catch(e){}
+try{filter=localStorage.getItem("buzz-filter-1107")||"all"}catch(e){}
 filter="mine";
-const save=()=>{try{localStorage.setItem("buzz-picks-1031",JSON.stringify(picks))}catch(e){}};
+const save=()=>{try{localStorage.setItem("buzz-picks-1107",JSON.stringify(picks))}catch(e){}};
 
 function teams(g,p){
   if(g.b==="F2"){const f=G(g.v,g.of);const [a,h]=teams(f,p);const w=winner(f,p);return (w&&w===h)?[a,h]:[null,null]}
@@ -704,7 +707,7 @@ function possible(v,s,p){
   return [...new Set([...possible(v,g.a,p),...possible(v,g.h,p)])];
 }
 function champion(v,p){ const f=GAMES.find(g=>g.v===v&&g.b==="F"), f2=GAMES.find(g=>g.v===v&&g.b==="F2");
-  const w=winner(f,p); if(!w)return null; const [a]=teams(f,p); if(w===a)return w; return winner(f2,p) }
+  const w=winner(f,p); if(!w)return null; const [a]=teams(f,p); if(w===a||!f2)return w; return winner(f2,p) }
 function dropTo(g){ return GAMES.find(x=>x.v===g.v&&x.b==="L"&&((x.a&&x.a.l===g.n)||(x.h&&x.h.l===g.n))) }
 const gameLine=x=>x?`game ${x.n}, ${x.d==="Sat"?"Saturday":"Sunday"} ${x.t||"TBA"}`:"";
 function road(team,v,p0){
@@ -717,7 +720,8 @@ function road(team,v,p0){
     if(!opp.length&&steps.length)opp=steps[steps.length-1].opp;
     let win,lose;
     if(g.b==="W"){win="still in the winners bracket";lose="drop to "+gameLine(dropTo(g))}
-    else if(g.b==="L"){win="keep going";lose="out, finish "+g.place}
+    else if(g.b==="L"){win="keep going";const d=dropTo(g);lose=d?"play again in "+gameLine(d):"out, finish "+g.place}
+    else if(g.b==="F"&&!GAMES.some(x=>x.v===v&&x.b==="F2")){win="champions";lose="finish 2nd"}
     else if(g.b==="F"){ if(a===team){win="champions";lose="force "+gameLine(GAMES.find(x=>x.v===v&&x.b==="F2"))} else {win="force "+gameLine(GAMES.find(x=>x.v===v&&x.b==="F2"));lose="finish 2nd"} }
     else {win="champions";lose="finish 2nd"}
     steps.push({g,opp,win,lose}); p[g.v+g.n]=team;
@@ -725,7 +729,7 @@ function road(team,v,p0){
   return {steps,champ:champion(v,p)===team};
 }
 function status(team,v){
-  const elim=GAMES.find(g=>g.v===v&&g.as!=null&&(g.b==="L"||g.b==="F2")&&loser(g,{})===team);
+  const elim=GAMES.find(g=>g.v===v&&g.as!=null&&((g.b==="L"&&!dropTo(g))||g.b==="F2"||(g.b==="F"&&!GAMES.some(x=>x.v===v&&x.b==="F2")))&&loser(g,{})===team);
   return elim?{out:true,place:elim.place||"2nd"}:{out:false};
 }
 const oppText=o=>{const n=o.map(nm);return n.length===1?esc(n[0]):"<em>"+esc(n.join(" or "))+"</em>"};
@@ -779,7 +783,7 @@ function renderBoard(){
   el.innerHTML=`<div class="board-k"><span>Next game, ${s.g.d==="Sat"?"Saturday":"Sunday"}</span><span>Game ${s.g.n}, ${DIV[v].name}</span></div>
     <div class="board-time">${esc(s.g.t||"TBA")}</div>
     <div class="board-vs">Buzz Parsons 10U vs ${oppText(s.opp)}</div>
-    <div class="board-meta"><span>${esc(s.g.f)}</span>${s.g.b==="L"?`<span>Lose and we're out</span>`:""}</div>
+    <div class="board-meta"><span>${esc(s.g.f)}</span>${s.g.b==="L"&&!dropTo(s.g)?`<span>Lose and we're out</span>`:s.g.b==="L"?`<span>A loss here isn't the end</span>`:""}</div>
     ${s.g.flag?`<div class="board-warn">${esc(s.g.flag)}</div>`:""}
     <div class="board-count" id="count" data-at="${gameAt(s.g)}"></div>
     ${lastChip()}
@@ -960,7 +964,9 @@ const TOURNEYS=[
  {name:"Doubles & Does",when:"Oct 17–18",days:["Oct 17","Oct 18"],div:"10U Silver, six teams",finish:"Champions",won:1,
   post:"https://www.instagram.com/buzzeliteparsons10u/p/DeqCgGEsJYY/",
   note:"Lost the opener to Texas Belles, then won five straight, 38–11 combined. Edged Texas Trailblazers 6–5 in the winners final and shut out GTX Crush 4–0 for the title."},
- {name:"Fright Night at the Ranch",when:"Oct 31–Nov 1",days:["Oct 31","Nov 1"],div:"10U, six teams",now:1,note:null}
+ {name:"Fright Night at the Ranch",when:"Oct 31–Nov 1",days:["Oct 31","Nov 1"],div:"10U, six teams",finish:"Reached the final",
+  note:"Swept pool play as the #1 seed, then 10–0 over NTX Dynamite and 7–1 over Buzz Premier to reach the championship game. Championship score still to come."},
+ {name:"NCS Texas State Championships",when:"Nov 7–8",days:["Nov 7","Nov 8"],div:"10U Diamond, six teams (17 in 10U)",now:1,note:null}
 ];
 const NEXT={hide:1,name:"Fright Night at the Ranch",when:"Oct 31–Nov 1",until:Date.parse("2026-11-02T00:00:00-06:00"),
   url:"https://parsonssportsranch.leagueapps.com/app/tournaments/5012673",
@@ -1012,7 +1018,7 @@ function renderSeason(){
       <details${t.now?" open":""}><summary>${t.gs.length} game${t.gs.length===1?"":"s"}</summary><div class="season">${games}</div></details>
     </article>`}).join("");
 }
-function gameAt(g){if(!g.t)return "";const m=g.t.match(/(\d+):(\d+) (AM|PM)/);const hh=(m[1]%12+(m[3]==="PM"?12:0));const day=g.d==="Sat"?"2026-10-31":"2026-11-01";return Date.parse(day+"T"+String(hh).padStart(2,"0")+":"+m[2]+":00"+(g.d==="Sat"?"-05:00":"-06:00"))}
+function gameAt(g){if(!g.t)return "";const m=g.t.match(/(\d+):(\d+) (AM|PM)/);const hh=(m[1]%12+(m[3]==="PM"?12:0));const day=g.d==="Sat"?"2026-11-07":"2026-11-08";return Date.parse(day+"T"+String(hh).padStart(2,"0")+":"+m[2]+":00-06:00")}
 function tickCount(){const el=document.getElementById("count");if(!el)return;const at=+el.dataset.at;if(!at){el.textContent="";return}const d=at-Date.now();
   if(d>0){const m=Math.round(d/60000),hh=Math.floor(m/60),mm=m%60;el.textContent="First pitch in "+(hh?hh+"h ":"")+mm+"m"}
   else if(d>-110*60000){el.textContent="Game on!"} else el.textContent="";}
@@ -1151,9 +1157,9 @@ function renderAll(){renderSeedPick();renderBoard();renderRoad();renderBracket()
 
 document.getElementById("bracket").addEventListener("click",e=>{const b=e.target.closest("[data-pick]");if(!b)return;const k=b.dataset.g;if(picks[k]===b.dataset.pick)delete picks[k];else picks[k]=b.dataset.pick;save();renderRoad();renderBracket()});
 document.getElementById("divtabs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;view=b.dataset.v;renderBracket()});
-document.getElementById("seedpick").addEventListener("click",e=>{const b=e.target.closest("button[data-seed]");if(!b)return;ETTA=b.dataset.seed||null;try{if(ETTA)localStorage.setItem("buzz-seed-1031",ETTA);else localStorage.removeItem("buzz-seed-1031")}catch(_){ }view=OURDIV();if(!ETTA&&filter==="mine")filter="all";renderAll()});
+document.getElementById("seedpick").addEventListener("click",e=>{const b=e.target.closest("button[data-seed]");if(!b)return;ETTA=b.dataset.seed||null;try{if(ETTA)localStorage.setItem("buzz-seed-1107",ETTA);else localStorage.removeItem("buzz-seed-1107")}catch(_){ }view=OURDIV();if(!ETTA&&filter==="mine")filter="all";renderAll()});
 document.getElementById("reset").addEventListener("click",()=>{picks={};save();renderRoad();renderBracket()});
-document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filter=b.dataset.f;try{localStorage.setItem("buzz-filter-1031",filter)}catch(_){ }renderTimeline()});
+document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;filter=b.dataset.f;try{localStorage.setItem("buzz-filter-1107",filter)}catch(_){ }renderTimeline()});
 renderAll();renderCards();renderGames();renderSpot();tickCount();setInterval(tickCount,30000);celebrateWin();
 </script>
 
@@ -1163,7 +1169,7 @@ renderAll();renderCards();renderGames();renderSpot();tickCount();setInterval(tic
    anything changes: pool scores, the seeds' team names, and bracket scores. */
 (function(){
   const URL="https://raw.githubusercontent.com/Litbroboy/parsons-10u/main/data/live.json";
-  const DAYS={Sat:"Oct 31",Sun:"Nov 1"};
+  const DAYS={Sat:"Nov 7",Sun:"Nov 8"};
   const OURS=/buzz.*elite|elite.*buzz/i;
   let last="";
   function addResult(day,opp,us,them){
@@ -1179,7 +1185,7 @@ renderAll();renderCards();renderGames();renderSpot();tickCount();setInterval(tic
   async function pull(){
     try{
       const r=await fetch(URL+"?t="+Date.now(),{cache:"no-store"}); if(!r.ok)return;
-      const j=await r.json(); if(j.tournament!=="fright-night-2026")return;
+      const j=await r.json(); if(j.tournament!=="ncs-state-2026")return;
       const sig=JSON.stringify([j.results,j.names,j.pool]);
       const st=document.getElementById("liveStamp");
       if(st&&j.updated)st.textContent="Scores update by themselves. Last new score: "+new Date(j.updated).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+".";

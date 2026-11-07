@@ -1,66 +1,18 @@
 {
- "updated": "2026-11-02T00:09:35.087Z",
- "tournament": "fright-night-2026",
+ "updated": "2026-11-07T22:44:12.541Z",
+ "tournament": "ncs-state-2026",
  "results": {
-  "S": {
-   "1": [
-    4,
-    12
-   ],
-   "2": [
-    18,
-    1
-   ],
-   "3": [
-    17,
-    0
-   ],
-   "4": [
-    8,
-    2
-   ],
-   "5": [
-    10,
-    0
-   ],
-   "6": [
-    4,
-    5
-   ],
-   "7": [
-    15,
-    2
-   ],
-   "8": [
-    7,
-    1
-   ],
-   "9": [
-    2,
-    0
-   ]
-  }
+  "S": {}
  },
  "names": {
   "S": [
-   "Buzz Elite",
-   "Buzz Premier",
-   "TX Prospects",
-   "NTX Dynamite",
-   "Centex Native",
-   "FC Premier"
+   "Team 1",
+   "Team 2",
+   "Team 3",
+   "Team 4",
+   "Team 5",
+   "Team 6"
   ]
  },
- "pool": [
-  {
-   "opp": "CenTex Natives 10U",
-   "us": 11,
-   "them": 0
-  },
-  {
-   "opp": "NTX Dynamite Softball",
-   "us": 7,
-   "them": 0
-  }
- ]
+ "pool": []
 }

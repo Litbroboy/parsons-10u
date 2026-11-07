@@ -40,6 +40,37 @@ for (const b of cfg.brackets) {
     .sort((x, y) => x[1] - y[1]).map(x => unq(x[2]).trim());
 }
 
+// NCS (playncs.com) bracket page: one table per bracket, one row per game:
+// game number, time, field, left team, "x - y" once final, right team. Unplayed slots read
+// "Seed N" / "Winner of Game N" in <em>; filled slots are links with the team's name.
+if (cfg.ncs) {
+  const html = await page(cfg.ncs.url);
+  if (html) {
+    const at = html.indexOf(cfg.ncs.bracket);
+    const t0 = at < 0 ? -1 : html.indexOf("<tbody", at), t1 = t0 < 0 ? -1 : html.indexOf("</tbody>", t0);
+    if (t0 > 0 && t1 > 0) {
+      const text = h => unq(h.replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();
+      const out = {}, seeds = [];
+      for (const tr of html.slice(t0, t1).split("<tr").slice(1)) {
+        const td = tr.split(/<td\b/).slice(1).map(c => c.slice(c.indexOf(">") + 1));
+        if (td.length < 6) continue;
+        const n = +(text(td[0]).match(/\d+/) || [0])[0];
+        const left = td[3], right = td[5];
+        const named = c => /<a\b/.test(c) ? text(c.replace(/<span class="pull-right[\s\S]*?<\/span>/, "")) : null;
+        const sc = text(td[4]).match(/(\d+)\s*-\s*(\d+)/);
+        if (n && sc) out[n] = [+sc[1], +sc[2]];
+        for (const [side, c] of [["a", left], ["h", right]]) {
+          const seed = cfg.ncs.seedCells[n + side], name = named(c);
+          if (seed && name) seeds[seed - 1] = name;
+        }
+      }
+      results[cfg.ncs.division] = out;
+      const count = Math.max(6, seeds.length);
+      names[cfg.ncs.division] = Array.from({ length: count }, (_, k) => seeds[k] || `Team ${k + 1}`);
+    } else console.log("NCS bracket table not found");
+  }
+}
+
 let pool = prev.pool || [];
 if (cfg.pool) {
   const html = await page(`https://parsonssportsranch.leagueapps.com/ajax/loadSchedule?origin=site&scope=program&itemType=games_events&programId=${cfg.pool.programId}&teamId=${cfg.pool.teamId}`);
