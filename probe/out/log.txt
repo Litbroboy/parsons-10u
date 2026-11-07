@@ -1,9 +1,6 @@
-la div 200 76048
-la team 200 6257
-la divpub 200 76048
-interior.js 200 122209
-tournaments-data.js 200 49457
-script.js 200 19409
-bhq ids qfmrd,rfmrd
-bhq qfmrd 200 38705
-bhq rfmrd 200 38682
+sched 200 68800
+details 200 48725
+bhq 0 23
+links: /fastpitch/Events/Standings/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C /fastpitch/Events/Bracket/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C
+link0 200 42159 https://playncs.com/fastpitch/Events/Standings/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C
+link1 200 162219 https://playncs.com/fastpitch/Events/Bracket/13662/5gg-ncs-texas-state-championships-open-mvp-event-double-points?division=10U%20C
