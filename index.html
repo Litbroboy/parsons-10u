@@ -445,7 +445,7 @@ h2{font-size:34px;line-height:1}
       <h1><span class="mb">Buzz</span><span class="mw">Parsons 10U</span></h1>
       <p class="mast-tag">Softball <i>/</i> Hustle <i>/</i> Heart</p>
       <div class="mast-line">
-        <span class="rec"><span class="num">27–4</span> this fall</span>
+        <span class="rec"><span class="num">28–4</span> this fall</span>
         <span>Centex Buzz Fastpitch</span>
         <span>Home field: Parsons Sports Ranch</span>
         <a class="tag" href="https://www.instagram.com/buzzeliteparsons10u/" target="_blank" rel="noopener">#buzzwin</a>
@@ -456,7 +456,7 @@ h2{font-size:34px;line-height:1}
 
   <section>
     <div class="board" id="board" aria-live="polite"></div>
-    <p class="tour"><b>NCS Texas State Championships</b>, Valley Ridge Park, Cedar Hill, Nov 7–8. Five-game guarantee. Pool play went 2–0 (3–1 over Dream Team 2k16, 12–0 over Empowered Athletics 10U) and put us first in the 10U standings, the <b>#1 seed in the 10U Diamond bracket</b>. Times and fields are NCS's; check with the coach at the park.</p>
+    <p class="tour"><b>NCS Texas State Championships</b>, Valley Ridge Park, Cedar Hill, Nov 7–8. Five-game guarantee. Pool play went 2–0 (3–1 over Dream Team 2k16, 12–0 over Empowered Athletics 10U) and put us first in the 10U standings, the <b>#1 seed in the 10U Diamond bracket</b>. Saturday night: 11–0 over Glory Adkins 10u - Mansfield. Sunday at noon on Field C is the winners-bracket final against Dream Team 2k16. Win it and we play for the title at 4:30. Times and fields are NCS's; check with the coach at the park.</p>
     <div class="seedpick" id="seedpick" hidden></div>
   </section>
 
@@ -661,8 +661,8 @@ const VR=x=>"Valley Ridge Park "+x;
 const GAMES=[
  {v:"S",n:1,b:"W",d:"Sat",t:"4:30 PM",f:VR("A"),a:S_(4),h:S_(5),as:3,hs:11},
  {v:"S",n:2,b:"W",d:"Sat",t:"4:30 PM",f:VR("C"),a:S_(3),h:S_(6),as:0,hs:6},
- {v:"S",n:3,b:"W",d:"Sat",t:"6:00 PM",f:VR("A"),a:S_(1),h:W(1)},
- {v:"S",n:4,b:"W",d:"Sat",t:"7:30 PM",f:VR("A"),a:W(2),h:S_(2)},
+ {v:"S",n:3,b:"W",d:"Sat",t:"6:00 PM",f:VR("A"),a:S_(1),h:W(1),as:11,hs:0,s:1},
+ {v:"S",n:4,b:"W",d:"Sat",t:"7:30 PM",f:VR("A"),a:W(2),h:S_(2),as:17,hs:0},
  {v:"S",n:5,b:"L",d:"Sun",t:"9:00 AM",f:VR("A"),a:L(2),h:L(3)},
  {v:"S",n:6,b:"L",d:"Sun",t:"9:00 AM",f:VR("C"),a:L(1),h:L(4)},
  {v:"S",n:7,b:"L",d:"Sun",t:"10:30 AM",f:VR("A"),a:W(5),h:L(6),place:"tied 5th"},
@@ -679,7 +679,7 @@ const LAYOUT={
  S:{w:[["Round 1",[1,2]],["Semifinals",[3,4]],["Winners final",[9]]],l:[["Losers 1",[5,6]],["Losers 2",[7,8]],["Losers 3",[10]],["Losers final",[11]]],f:[["Championship",[12]]]}
 };
 const BUZZ=[];
-const SEASON=[["Aug 29","Waco Wood Ducks","W","7-0"],["Aug 29","Storm 10U Blue","W","5-3"],["Aug 30","Buzz Bold 9U","W","6-2"],["Aug 30","Waco Wood Ducks","W","2-1"],["Aug 30","Waco Wood Ducks","W","1-0"],["Sep 13","TX Chaos","W","8-0"],["Sep 13","RobCo Rowdies","W","9-0"],["Sep 13","TX Chaos","W","8-4"],["Sep 13","RobCo Rowdies","W","10-1"],["Sep 26","PC Havoc 9U","W","11-0"],["Sep 26","Pink Sox","W","7-1"],["Sep 27","PC Havoc 9U","W","9-0"],["Sep 27","Pink Sox","W","9-1"],["Sep 27","Pink Sox","W","6-1"],["Oct 10","Texas Twisters","L","1-3"],["Oct 10","Hotshots Velazquez","W","4-1"],["Oct 10","Texas Twisters","L","2-3"],["Oct 11","NL Bandits","W","8-4"],["Oct 11","Hotshots Velasquez","L","1-3"],["Oct 17","Texas Belles 2k16","L","1-7"],["Oct 17","Texas Trailblazers","W","7-6"],["Oct 17","Waco Warriors","W","13-0"],["Oct 18","Magic FP","W","8-0"],["Oct 18","Texas Trailblazers","W","6-5"],["Oct 18","GTX Crush","W","4-0"],["Oct 31","CenTex Natives 10U","W","15-1"],["Oct 31","NTX Dynamite Softball","W","7-0"],["Oct 31","NTX Dynamite","W","10-0"],["Nov 1","Buzz Premier","W","7-1"],["Nov 7","Dream Team 2k16","W","3-1"],["Nov 7","Empowered Athletics 10U","W","12-0"]];
+const SEASON=[["Aug 29","Waco Wood Ducks","W","7-0"],["Aug 29","Storm 10U Blue","W","5-3"],["Aug 30","Buzz Bold 9U","W","6-2"],["Aug 30","Waco Wood Ducks","W","2-1"],["Aug 30","Waco Wood Ducks","W","1-0"],["Sep 13","TX Chaos","W","8-0"],["Sep 13","RobCo Rowdies","W","9-0"],["Sep 13","TX Chaos","W","8-4"],["Sep 13","RobCo Rowdies","W","10-1"],["Sep 26","PC Havoc 9U","W","11-0"],["Sep 26","Pink Sox","W","7-1"],["Sep 27","PC Havoc 9U","W","9-0"],["Sep 27","Pink Sox","W","9-1"],["Sep 27","Pink Sox","W","6-1"],["Oct 10","Texas Twisters","L","1-3"],["Oct 10","Hotshots Velazquez","W","4-1"],["Oct 10","Texas Twisters","L","2-3"],["Oct 11","NL Bandits","W","8-4"],["Oct 11","Hotshots Velasquez","L","1-3"],["Oct 17","Texas Belles 2k16","L","1-7"],["Oct 17","Texas Trailblazers","W","7-6"],["Oct 17","Waco Warriors","W","13-0"],["Oct 18","Magic FP","W","8-0"],["Oct 18","Texas Trailblazers","W","6-5"],["Oct 18","GTX Crush","W","4-0"],["Oct 31","CenTex Natives 10U","W","15-1"],["Oct 31","NTX Dynamite Softball","W","7-0"],["Oct 31","NTX Dynamite","W","10-0"],["Nov 1","Buzz Premier","W","7-1"],["Nov 7","Dream Team 2k16","W","3-1"],["Nov 7","Empowered Athletics 10U","W","12-0"],["Nov 7","Glory Adkins 10u - Mansfield","W","11-0"]];
 const DAYN={Sat:0,Sun:1};
 const sortKey=g=>DAYN[g.d]*2000+mins(g.t);
 function todayKey(){const d=new Date().toLocaleDateString("en-US",{timeZone:"America/Chicago",month:"numeric",day:"numeric"});return d==="11/7"?"Sat":d==="11/8"?"Sun":null}
